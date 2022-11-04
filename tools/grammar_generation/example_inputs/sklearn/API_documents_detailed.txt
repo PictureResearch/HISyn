@@ -1,0 +1,382 @@
+name: sklearn.linear_model.LinearRegression
+caller: object
+class: sklearn.linear_model.LinearRegression
+type: class
+method: fit | get_params | predict | score | set_params
+argument: fit_intercept, normalize, copy_X, n_jobs, positive
+return: sklearn.linear_model.LinearRegression
+#| estimator| predictor| model
+description: Ordinary least squares Linear Regression. LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
+
+name: fit_intercept
+caller: sklearn.linear_model.LinearRegression | set_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: Whether to calculate the intercept for this model. If set to False, no intercept will be used in calculations (i.e. data is expected to be centered).
+
+name: normalize
+caller: sklearn.linear_model.LinearRegression | set_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: This parameter is ignored when fit_intercept is set to False. If True, the regressors X will be normalized before regression by subtracting the mean and dividing by the l2-norm. If you wish to standardize, please use StandardScaler before calling fit on an estimator with normalize=False.
+
+name: copy_X
+caller: sklearn.linear_model.LinearRegression | set_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: If True, X will be copied; else, it may be overwritten.
+
+name: n_jobs
+caller: sklearn.linear_model.LinearRegression | set_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | python_int
+return:
+description: The number of jobs to use for the computation. This will only provide speedup for n_targets > 1 and sufficient large problems. None means 1 unless in a joblib.parallel_backend context. -1 means using all processors. See Glossary for more details.
+
+name: positive
+caller: sklearn.linear_model.LinearRegression | set_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: When set to True, forces the coefficients to be positive. This option is only supported for dense arrays.  New in version 0.24.
+
+name: fit
+caller: sklearn.linear_model.LinearRegression
+class: sklearn.linear_model.LinearRegression
+type: method
+method:
+argument: X, y, sample_weight
+return: sklearn.linear_model.LinearRegression
+# return: self | estimator | regressor
+description: Fit linear model.Training dataTarget values. Will be cast to X’s dtype if necessaryIndividual weights for each sampleNew in version 0.17: parameter sample_weight support to LinearRegression.
+
+name: X
+caller: fit
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: np.array | python_var
+return:
+description: Training data
+
+name: X
+caller: predict
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: np.array | python_var
+return:
+description: Samples
+
+name: X
+caller: score
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: np.array | python_var
+return:
+description: Test Samples
+
+name: y
+caller: fit | score
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: np.array | python_var
+return:
+description: Target values. Will be cast to X’s dtype if necessary
+
+name: sample_weight
+caller: fit | score
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | np.array, python_var
+return:
+description: Individual weights for each sample  New in version 0.17: parameter sample_weight support to LinearRegression.
+
+name: get_params
+caller: sklearn.linear_model.LinearRegression
+class: sklearn.linear_model.LinearRegression
+type: method
+method:
+argument: deep
+return: python_dict
+description: Get parameters for this estimator.If True, will return the parameters for this estimator and contained subobjects that are estimators.Parameter names mapped to their values.
+
+name: deep
+caller: get_params
+class: sklearn.linear_model.LinearRegression
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: If True, will return the parameters for this estimator and contained subobjects that are estimators.
+
+name: predict
+caller: sklearn.linear_model.LinearRegression
+class: sklearn.linear_model.LinearRegression
+type: method
+method:
+argument: X
+return: np.array
+description: Predict using the linear model.Samples.Returns predicted values.
+
+name: score
+caller: sklearn.linear_model.LinearRegression
+class: sklearn.linear_model.LinearRegression
+type: method
+method:
+argument: X, y, sample_weight
+return: python_float
+description: Return the coefficient of determination \(R^2\) of the prediction.The coefficient \(R^2\) is defined as \((1 - \frac{u}{v})\), where \(u\) is the residual sum of squares ((y_true - y_pred) ** 2).sum() and \(v\) is the total sum of squares ((y_true - y_true.mean()) ** 2).sum(). The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse). A constant model that always predicts the expected value of y, disregarding the input features, would get a \(R^2\) score of 0.0.Test samples. For some estimators this may be a precomputed kernel matrix or a list of generic objects instead with shape (n_samples, n_samples_fitted), where n_samples_fitted is the number of samples used in the fitting for the estimator.True values for X.Sample weights.\(R^2\) of self.predict(X) wrt. y.NotesThe \(R^2\) score used when calling score on a regressor uses multioutput='uniform_average' from version 0.23 to keep consistent with default value of r2_score. This influences the score method of all the multioutput regressors (except for MultiOutputRegressor).
+
+name: set_params
+caller: sklearn.linear_model.LinearRegression
+class: sklearn.linear_model.LinearRegression
+type: method
+method:
+argument: fit_intercept, normalize, copy_X, n_jobs, positive
+return:
+description: Set the parameters of this estimator.The method works on simple estimators as well as on nested objects (such as Pipeline). The latter have parameters of the form <component>__<parameter> so that it’s possible to update each component of a nested object.Estimator parameters.Estimator instance.
+
+name: sklearn.linear_model.Ridge
+caller: object
+class: sklearn.linear_model.Ridge
+type: class
+method: fit | get_params | predict | score | set_params
+argument: alpha, fit_intercept, normalize, copy_X, max_iter, tol, solver, random_state
+return: sklearn.linear_model.Ridge
+#| estimator| predictor| model
+description: Linear least squares with l2 regularization. Minimizes the objective function:
+
+name: alpha
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | np.array | python_var | python_float | python_int
+return:
+description: Regularization strength; must be a positive float. Regularization improves the conditioning of the problem and reduces the variance of the estimates. Larger values specify stronger regularization. Alpha corresponds to 1 / (2C) in other linear models such as LogisticRegression or LinearSVC. If an array is passed, penalties are assumed to be specific to the targets. Hence they must correspond in number.
+
+name: fit_intercept
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: Whether to fit the intercept for this model. If set to false, no intercept will be used in calculations (i.e. X and y are expected to be centered).
+
+name: normalize
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: This parameter is ignored when fit_intercept is set to False. If True, the regressors X will be normalized before regression by subtracting the mean and dividing by the l2-norm. If you wish to standardize, please use StandardScaler before calling fit on an estimator with normalize=False.
+
+name: copy_X
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: If True, X will be copied; else, it may be overwritten.
+
+name: max_iter
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | python_int
+return:
+description: Maximum number of iterations for conjugate gradient solver. For ‘sparse_cg’ and ‘lsqr’ solvers, the default value is determined by scipy.sparse.linalg. For ‘sag’ solver, the default value is 1000.
+
+name: tol
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | python_float, python_int
+return:
+description: Precision of the solution.
+
+name: solver
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | 'auto' | 'svd'| 'cholesky' | 'lsqr' | 'sparse_cg' | 'sag' | 'saga'
+return:
+description: Solver to use in the computational routines:  ‘auto’ chooses the solver automatically based on the type of data. ‘svd’ uses a Singular Value Decomposition of X to compute the Ridge coefficients. More stable for singular matrices than ‘cholesky’. ‘cholesky’ uses the standard scipy.linalg.solve function to obtain a closed-form solution. ‘sparse_cg’ uses the conjugate gradient solver as found in scipy.sparse.linalg.cg. As an iterative algorithm, this solver is more appropriate than ‘cholesky’ for large-scale data (possibility to set tol and max_iter). ‘lsqr’ uses the dedicated regularized least-squares routine scipy.sparse.linalg.lsqr. It is the fastest and uses an iterative procedure. ‘sag’ uses a Stochastic Average Gradient descent, and ‘saga’ uses its improved, unbiased version named SAGA. Both methods also use an iterative procedure, and are often faster than other solvers when both n_samples and n_features are large. Note that ‘sag’ and ‘saga’ fast convergence is only guaranteed on features with approximately the same scale. You can preprocess the data with a scaler from sklearn.preprocessing.  All last five solvers support both dense and sparse data. However, only ‘sag’ and ‘sparse_cg’ supports sparse input when fit_intercept is True.  New in version 0.17: Stochastic Average Gradient descent solver.   New in version 0.19: SAGA solver.
+
+name: 'auto'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'svd'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'cholesky'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'lsqr'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'sparse_cg'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'sag'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: 'saga'
+caller: solver
+class: sklearn.linear_model.Ridge
+type: literal
+method:
+argument:
+return:
+description:
+
+name: random_state
+caller: sklearn.linear_model.Ridge | set_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | python_int | np.random.RandomState
+return:
+description: Used when solver == ‘sag’ or ‘saga’ to shuffle the data. See Glossary for details.  New in version 0.17: random_state to support Stochastic Average Gradient.
+
+name: fit
+caller: sklearn.linear_model.Ridge
+class: sklearn.linear_model.Ridge
+type: method
+method:
+argument: X, y, sample_weight
+return: sklearn.linear_model.Ridge
+description: Fit Ridge regression model.Training dataTarget valuesIndividual weights for each sample. If given a float, every sample will have the same weight.
+
+name: X
+caller: fit | predict | score
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: np.array | python_var
+
+return:
+description: Training data
+
+name: y
+caller: fit | score
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: np.array | python_var
+
+return:
+description: Target values
+
+name: sample_weight
+caller: fit | score
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | np.array | python_var | python_float | python_int
+return:
+description: Individual weights for each sample. If given a float, every sample will have the same weight.
+
+name: get_params
+caller: sklearn.linear_model.Ridge
+class: sklearn.linear_model.Ridge
+type: method
+method:
+argument: deep
+return: python_dict
+description: Get parameters for this estimator.If True, will return the parameters for this estimator and contained subobjects that are estimators.Parameter names mapped to their values.
+
+name: deep
+caller: get_params
+class: sklearn.linear_model.Ridge
+type: keyword_arg
+method:
+argument: empty | bool
+return:
+description: If True, will return the parameters for this estimator and contained subobjects that are estimators.
+
+name: predict
+caller: sklearn.linear_model.Ridge
+class: sklearn.linear_model.Ridge
+type: method
+method:
+argument: X
+return: np.array
+description: Predict using the linear model.Samples.Returns predicted values.
+
+name: score
+caller: sklearn.linear_model.Ridge
+class: sklearn.linear_model.Ridge
+type: method
+method:
+argument: X, y, sample_weight
+return: python_float
+description: Return the coefficient of determination \(R^2\) of the prediction.The coefficient \(R^2\) is defined as \((1 - \frac{u}{v})\), where \(u\) is the residual sum of squares ((y_true - y_pred) ** 2).sum() and \(v\) is the total sum of squares ((y_true - y_true.mean()) ** 2).sum(). The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse). A constant model that always predicts the expected value of y, disregarding the input features, would get a \(R^2\) score of 0.0.Test samples. For some estimators this may be a precomputed kernel matrix or a list of generic objects instead with shape (n_samples, n_samples_fitted), where n_samples_fitted is the number of samples used in the fitting for the estimator.True values for X.Sample weights.\(R^2\) of self.predict(X) wrt. y.NotesThe \(R^2\) score used when calling score on a regressor uses multioutput='uniform_average' from version 0.23 to keep consistent with default value of r2_score. This influences the score method of all the multioutput regressors (except for MultiOutputRegressor).
+
+name: set_params
+caller: sklearn.linear_model.Ridge
+class: sklearn.linear_model.Ridge
+type: method
+method:
+argument: alpha, fit_intercept, normalize, copy_X, max_iter, tol, solver, random_state
+return:
+description: Set the parameters of this estimator.The method works on simple estimators as well as on nested objects (such as Pipeline). The latter have parameters of the form <component>__<parameter> so that it’s possible to update each component of a nested object.Estimator parameters.Estimator instance.

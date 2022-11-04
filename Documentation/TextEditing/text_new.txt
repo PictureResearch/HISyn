@@ -1,0 +1,467 @@
+Insert colon after 1st word
+Insert a colon after a sequence of numbers
+Insert colon before every 1st word
+Put colon before the 1st space in every line
+Enter colon before space
+Put colon before the 1st space in every line
+Enter colon before space
+put colon before a space
+put colon after the 1st word
+Insert colon after the integer in each line
+Replace colon by space and colon
+put colon after every numeral in every line
+after 1st word put colon
+Insert a colon after the 1st word in every line
+insert colon before 1st space
+Insert a colon after numbers in each line
+insert a colon after 1st numeric letter
+Add a colon after the number
+Append a colon after an integer
+Insert colon after 1st word of the sentence
+Insert colon after the word that starts with space
+Insert colon in every line after the numbers
+Insert colon after the 1st occurrence of space
+Insert a colon and a space before the 1st word in every line
+for each line, put a colon before the 1st word of the line
+add colon before 1st word
+add a colon before the 1st word
+put colon before 1st space
+put colon before the 1st word
+Add colon to the beginning of the 1st word
+insert colon followed by a space before the 1st word in each line
+insert colon just before the 1st word
+prepend each line with colon
+Add colon to the beginning of each line
+Add colon to the beginning of every sentence
+Add the string colon at the beginning of every line
+Insert colon to the beginning of each line
+Add colon to every new line
+Add colon as prefix to every line
+place colon before every line
+insert colon before each line
+At the starting of every line, add colon
+Insert colon in the beginning of each line
+Insert colon at the starting of each line
+Insert colon in the beginning in every line
+Insert colon to the beginning of each line
+Insert colon before each line
+insert a colon before every line
+Append colon at the start of all lines
+Insert colon before 1st letter in every line
+Add colon at the starting of each statement
+Add colon to the start of every string
+add colon in the beginning of each line
+insert text colon in the starting of every line
+Insert colon before every line
+Add colon before all strings
+Insert colon in front of every line
+Add colon in all the 4 lines before the occurrence of space
+add colon at the start of the lines
+Prefix colon to the beginning
+append a colon to the beginning
+Append a colon
+Append a colon to the beginning
+Insert colon at the beginning of all lines
+Add colon at the beginning of those lines that do not already start with colon
+If a sentence does not start with colon then insert colon at its beginning.
+If a line does not start with a colon add a colon at its beginning
+except line 2nd and 6th, insert colon in starting of every line
+Insert colon before every line that does not start with colon.
+Add colon at the beginning of all the sentences in A which do not start with colon
+Insert colon in all lines at the beginning not starting with colon
+Insert colon before each line not starting with colon
+Insert colon in all lines at the beginning not starting with colon
+Insert colon before each line not starting with colon
+Insert colon before every line that does not starts with colon
+Add colon at the beginning of each statement if colon is not present.
+add colon in the beginning of all the lines wherever colon is not present.
+insert colon at the starting of every line except 2nd and 1st line
+Insert colon in every line not starting with colon
+Insert colon in every line whose starting is not a colon already
+Put colon in the start of each line if it has no colon at the start
+if statement does not starts with colon add colon in the beginning
+Prepend the line containing colon with space
+Add colon at the beginning of every sentence containing the word space
+add colon in the start of line that contains space
+Add a colon at the beginning of the line in which the string space occurs
+Put colon at the beginning of 2nd, 6th line
+put a colon before each line that has space embedded within it
+Put a colon in front of lines with space as a substring
+insert colon before every line that starts with space
+insert colon before the lines that starts with space or starts with dollar
+Insert colon at the beginning of each line containing space
+Insert colon at the start of every line which has space word
+Insert colon before every line that has the occurrence of space
+Add colon in the beginning of the line which contains space
+add colon in beginning of all the lines wherever space is present
+insert a colon at the beginning in the sentence which has space in it
+insert colon at the start of the sentence where the sentence consists of space
+Insert colon in front of every line containing space in it
+add colon at the start of every line which has the word space
+Put colon at the start of those line which contain space
+if sentence contain colon as a substring add space before the sentence
+add colon to each line that starts with space
+Add colon to the end of every sentence ending with a digit.
+In every line beginning with colon, append space towards the end.
+Add the string colon at the end of every line which contains a space.
+if line begins with colon, put space at the end of line
+Append colon in every line containing numerals
+Insert colon at the end of each line which does not end with space
+add colon in every 2 lines starting from the 1st
+If sentence start from colon then at the end add space
+Insert colon at the end of every line which starts with space
+Append colon in every line starting with space
+Add colon at the end of line which has space
+if Sentence starts with colon, add space after 14 characters
+Append colon in every 2 lines.
+Add colon to the end of every statement starting with space
+Insert colon at the end of lines 2, 4, 6 and 8
+Add the string colon at the end of every 2nd line.
+In the every 2 lines, add colon
+At the end of every 2nd line, add colon
+Insert colon in every 2 lines at last
+Add colon at the last of every 2nd statement
+Put colon in every 2 lines
+Insert colon at the end of every 2 lines
+insert colon after ending of every 2 lines
+Insert colon and space in every 2nd line
+Insert colon at the end of every 2nd line starting from the 2nd line.
+Insert colon at the end of line in every 2nd line
+put colon at the end of every 2 coming lines
+Suffix every 2 line with colon
+Replace colon with space
+Replace colon wherever it occurs with space
+Replace all the occurrences of colon with space
+For each line, if it ends with colon, replace colon by dollar
+replace colon to space in 4th , 6th and 7th line
+convert the string colon to space in every line
+Convert all colon to space
+Replace colon by space
+Convert colon to space at the end of 4th , 6th and 7th line
+replace colon with the word space
+replace colon with space
+replace colon with space in each sentence
+replace the text in between colon and space by dollar
+Replace the text inside colon and space with dollar
+Replace the text between colon and space with the word dollar
+Replace the contents in between colon and space with dollar
+For every line, remove the number between colon and colon
+Eliminate all the characters between colon and colon
+Remove 4th, 5th and 6th digits from all lines
+Remove 2nd number from each line
+delete the 2nd number from each line.
+Remove the words that are between colon and space
+remove colon and remove space
+remove all colon and remove all space
+for each line, remove the colon and remove space
+remove colon and remove space from each line
+Eliminate the characters 1st, 5th, 6th and 10th from all the lines.
+Remove Numbers
+remove only the numeric characters. 
+Remove the 1st word of the line which starts with a number
+Remove the numbers from all lines except the 2nd line
+remove digits in each line
+remove numbers from each line except line 2
+Remove the numbers from the lines
+Remove all the numerals from every line.
+Remove numbers from all sentences in A
+Remove all the numerals from every line.
+Remove numbers from all sentences in A
+Drop all numbers.
+Remove numeric values from all the lines
+if any word have digits at the beginning of it then remove digits
+remove digits from sentence
+Remove all the numbers from each line
+remove digits from 1st 3rd and 4th line
+Remove the numbers from each line
+Remove all the digits
+Delete all the numeric part of the text
+Remove the numbers from all the lines
+Remove the line containing colon or containing space except the 1st line
+Remove the sentence if it does not contain the string colon
+Remove line 3rd and 4th
+Remove the 3rd and 4th line
+Remove the sentences which does not contain colon as its part
+Eliminate the 3rd and 4th line
+Eliminate the line which does not contain colon in any word of the sentence
+Remove all lines which do not contain colon
+Remove the line if it does not contain colon as a substring
+Delete those lines that do not contain colon
+Remove all the characters after colon in each sentence
+In each line remove all the characters after colon
+Remove all text in a line starting from colon
+In each line, remove everything after the colon
+remove text beginning with colon
+remove everything after endpoints colon
+In every line, delete the text after colon
+remove all the characters after colon in all the lines
+Delete the text after symbol colon
+remove anything that follows after colon
+Remove all the words after the colon
+Drop everything after colon in each line
+In each line, remove the part after colon
+In each line, remove the part after colon
+Remove everything after colon in each line.
+remove text after colon from each line
+remove everything after colon from the sentence
+in each line, remove everything after colon
+Remove all text that is written after colon
+remove everything after colon till the end of the row 
+Print everything before colon
+Remove everything that comes after colon in each line
+remove every character after colon
+Remove the 1st character
+Remove 1st occurrence of colon from the all of the above lines
+Remove the 1st colon symbol from all the lines
+Remove the 1st character from every line
+Replace the 1st symbol colon with space from every line
+if colon occurs at the beginning of line remove colon
+Remove 1st colon from each line
+Remove 1st occurrence of colon form every line left to right. 
+Remove 1st character form every row in every line.
+Remove 1st colon character from each line
+Eliminate the 1st character from all the lines
+delete 1st occurrence of colon symbol
+Remove colon before every line
+Remove every 1st occurrence of colon from all the lines
+remove the 1st occurrence of character colon in the text
+add colon
+Remove the 1st occurrence of colon in each line
+Remove 1st colon from every line
+print everything between the occurrences of colon and colon
+Extract the word immediately following the 1st colon
+extract all words that have colon or have space
+Remove everything before colon
+Extract everything immediately after colon 
+Extract everything before next colon
+Remove all empty lines.
+remove blank lines if any.
+Remove any empty line
+Remove the lines containing no characters.
+Remove Blank lines
+remove the empty line
+remove all the blank lines.
+Remove empty lines.
+Remove lines containing no characters.
+remove all blank lines.
+Remove the blank lines.
+Remove all the blank lines.
+Remove all the blank lines.
+Delete empty lines.
+Remove the colon and remove the digits between colon and colon
+Remove all the colon and remove the number between colon and colon
+Eliminate all the colon and remove the characters between colon and colon
+Remove everything before colon. 
+remove the colon
+Extract everything immediately after colon and till next space
+Insert colon at beginning of each line.
+Add a colon and space to each line.
+Add a colon after every nonblank line.
+Add colon at the beginning of every line that does not start with space.
+Add a colon after the 8th character in each line.
+If some line does not end with a colon, add colon
+Add the suffix colon to the word right after space
+Add a colon at the end of any line which does not already have colon
+Add colon at the end of the 1st word in each line.
+Next to the 1st character, add an colon
+On every 2 lines, insert an colon
+Add an additional colon between line and line
+Add colon characters between number and number in the line
+Put colon between number and number
+Append at the end of the line colon
+Append colon to the end of lines starting with space
+Add a colon to the lines unless it already starts with a colon
+Add colon to words
+Add an colon followed by a space at the end of every word
+Add a colon after the 80th character in each line
+Insert a colon above every line that matches space
+Insert above the 1st line the title colon
+Insert a colon after every 3 lines
+Attach colon before all words including an space
+Place colon between word and word in each line
+After each instance of colon, add space
+Insert colon between digit and digit
+Put a colon before a current colon
+Insert colon before opening space
+Place a colon between space and space
+Place colon at the end of line only if it does not already end with colon
+Insert colon at the beginning of text
+Add colon at the end of the file
+remove all instances of colon
+Delete all blank lines
+Delete the last 2 lines of the input
+Remove all the lines between an occurrence of colon and an occurrence of space
+Remove every 3 occurrence of the word colon
+Delete all consecutive blank lines from the input 
+Delete the 1st number on all lines that start with a colon
+Remove the string colon from every line whose immediately following line is space
+Delete the first 3 lines
+Delete all empty lines
+Delete every 4th line
+Remove colon everywhere except in the lines between space and dollar
+Delete every line that has a colon or has space in it
+Delete the last line of the input
+Remove all the 2nd fields ending in colon
+Delete lines containing colon
+Delete the 1st number on line 3
+Delete the 2nd field on each line
+Delete colon from each line
+Delete lines that match regular expression pattern colon
+Remove the last word
+Delete all consecutive blank lines from the input except the first 2
+Delete all blank lines from the input
+Remove a line containing colon
+Remove a line ending with colon
+Remove the 2nd occurrence of a line ending in colon from the file
+Delete the 1st and 3rd columns of the input
+delete the first 3 words
+Delete all digits in the 2nd word
+Delete colon between the word and space of each sentence
+delete everything inside colon and space
+Remove all blank lines between line and line
+Remove the terminal colon on every line but the last 1
+Remove the 2nd instance of the line colon
+Remove the colon before an space or after an dollar
+remove all colon and remove all space
+Eliminate the 1st number on each line
+Delete all but the 1st occurrence of colon
+Delete the word colon wherever it comes after space
+Remove all characters between colon and space in the same word
+delete every line that contains colon or contains word space
+Delete colon anywhere if it is followed by a space
+Delete all empty lines
+Delete the last 10 lines of a file
+Delete every 8th line
+Remove text between colon and space
+Delete the character colon unless it comes before an space
+Reject words which have numbercharacters in them
+Remove all symbols which are not numbers
+Delete the bottom 3 lines
+Remove lines having the character colon
+Remove text after colon in each line
+Remove the word colon from the file
+Remove lines that begin with colon
+Remove all spaces
+Remove blanklines before the nonblankline of text
+Remove colon in the file.
+Remove colon and remove space
+Remove lines that include the string colon
+Ignore every word that contains digits from every 3rd line
+Replace every colon with space
+Substitute  the 4th occurrence of colon with space on each line
+Replace the line containing colon with space
+Substitute colon with space in the first 3 line
+replace colon with space in all lines
+Substitute colon with space in the last 2 lines
+replace all colon with space
+Replace every 2nd occurrence of colon with space
+Substitute colon with space in all lines except the first 2 lines
+replace all whitespace gaps to a colon
+Replace every 3rd occurrence of the line colon  with a space
+Substitute only the last occurrence of colon with space
+Substitute colon with space only on lines that do not contain dollar
+Replace the first occurrence of colon in a line having space with an occurrence of dollar
+Replace each occurrence of the number colon with an space
+Replace the colon with a space
+Replace colon with space 
+Replace all substrings colon by space unless the word starts with dollar
+Replace colon with space
+Replace colon with a space and dollar
+Change colon to space in the input
+Change the name colon to space
+Change every word on a line but the 3rd to colon
+Convert every colon into a space
+Change all instances of colon to space
+Substitute colon with space in lines 2nd, 3rd, 4th and 5th
+In every line, replace the word next to colon by space
+Replace any sequence of one or more whitespace except those anywhere inside colon and space with a dollar
+Replace colon with space everywhere in the input
+Substitute colon with space
+Replace every occurrence of colon with space
+Replace colon with space unless it is inside dollar and dollar
+Replace colon with space
+Change all occurrences of colon to space
+Replace colon with space
+Replace colon with space
+Replace the 2nd word in each line with colon
+Replace any word ending with colon with space
+If colon is at the beginning of the line, replace colon with dollar
+Replace the word colon with space
+Replace colon with space
+Replace colon with space
+Replace all numbers with colon
+Replace colon with space
+Replace the word colon with space
+Replace the first colon in every line with a space
+Replace all characters immediately followed by colon with space
+Replace words beginning with colon
+Replace text between colon and colon with dollar
+Change all the words ending in colon to space
+Replace what is between colon and colon with dollar
+Print the lines after the word colon
+Print the last field of the last line
+Search for lines that contain colon or contains whitespaces
+list the 3rd field of those lines of the file in which the letter colon appears
+Print the last 2 lines of a file
+Find everything between colon and space and print it
+Print the last field of each line
+Print all words containing the colon anywhere in the word
+Print a line if it contains colon and contains space in any order
+print just the 4th field of the record ending in colon
+Print everything between an occurrence of  colon and space
+Print line numbered 52
+Print lines containing colon or containing space
+Print out any input line that mentions colon and mentions space
+List words ending in colon or ending in space
+search the lines containing the word colon
+List the fields ending in colon or ending in space
+Print the last line of a file
+Print all words beginning with colon
+Print the 2nd word after pattern colon on every line
+Print all lines ending in colon
+Print all lines containing the string colon
+Print all lines in the file containing the string colon
+Print out any line that mentions colon
+print every 2 lines from 1 line
+Print all lines that do not contain colon
+Print the last 10 lines of a file
+Print all lines that matches colon
+print every line which contains the word colon
+Print all words beginning with colon or beginning with space
+Print all records after colon on every line
+Print all lines starting with an colon or starting with space
+Print only the first 5 characters
+Extract all numbers
+Print all the words enclosed in colon and space
+Print the 3rd field of the file and remove the colon
+Output every symbol between colon and space
+Find the first occurrence of colon and print the next character
+Print everything after a colon and before a space
+Print every word which starts with a colon
+Print everything before colon wherever it is
+Print any word that starts with colon and is followed somewhere by space
+Extract the word following colon
+Print characters between colon and space
+Print words which are not in between colon or space
+Print text after colon in each line
+Print every instance of a word immediately following colon
+Do not print words that end in colon
+Print words immediately preceded by colon
+Print numbers that are immediately followed by the word colon
+Only print the words which end in colon and include space
+Print words that do not contain colon
+Print words beginning with colon
+Print only lines that match colon
+Print all words containing the letter colon
+Only print the words which include colon
+Print words which include colon
+Print characters between colon and space
+Print the first 4 words in each line
+Print data between a colon and an space
+Print the last number in each line
+Print lines that begin with colon
+Print the 5th field in each line
+Print words in the file consisting of numbers
+Print words which match colon
+Print what is on each line between colon and the next space
+

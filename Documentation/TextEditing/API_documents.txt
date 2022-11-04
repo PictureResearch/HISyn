@@ -1,0 +1,259 @@
+AFTER
+input: 
+return: 
+description: after a string or token
+
+AFTERCOND
+input: 
+return: 
+description: after, following
+
+ALL
+input: 
+return: 
+description: all
+
+ALLBUT
+input: 
+return: 
+description: except, but
+
+ALWAYS
+input: 
+return: 
+description: always
+
+AND
+input: 
+return: 
+description: and
+
+BConditionOccurrence
+input: 
+return: 
+description: condition
+
+BEFORE
+input: 
+return: 
+description: before, in_front_of
+
+BEFORECOND
+input: 
+return: 
+description: before
+
+BETWEEN
+input: 
+return: 
+description: between
+
+BETWEENCOND
+input: 
+return: 
+description: between, inside, enclose
+
+BLANKLINETOKEN
+input: 
+return: 
+description: blank lines, empty lines, blank line, empty line, blankline.
+
+BY
+input: 
+return: 
+description: by, with, the substitution info.
+
+CHARTOKEN
+input: 
+return: 
+description: char, character, letter, symbol
+
+CONCATENATE
+input: 
+return: 
+description: CONCATENATE
+
+CONTAINS
+input: 
+return: 
+description: contains, present, contain, occur, embedded, substring, have, including, consist, include, mention
+
+DIGITTOKEN
+input: 
+return: 
+description: digit, numbercharacter
+
+END
+input: 
+return: 
+description: end
+
+ENDSWITH
+input: 
+return: 
+description: end with
+
+EVERY
+input: 
+return: 
+description: every
+
+FIRSTFEW
+input: 
+return: 
+description: first few
+
+FIRSTONE
+input: 
+return: 
+description: first one
+
+IMM
+input: 
+return: 
+description: immediate, immediately
+
+INSERT
+input: 
+return: 
+description: insert, add, put, enter, attach, prepend, append
+
+INTEGER
+input: ck_integer
+return: 
+description: integer
+
+IntegerSet
+input: 
+return: 
+description: integer
+
+IterationScope
+input: 
+return: 
+description: iteration scope
+
+LASTFEW
+input: 
+return: 
+description: last few
+
+LASTONE
+input: 
+return: 
+description: last one
+
+LINE
+input: 
+return: 
+description: line
+
+LINESCOPE
+input: 
+return: 
+description: line scope, sentence, string, text, statement
+
+LINETOKEN
+input: 
+return: 
+description: line, string, sentence, record
+
+MATCHES
+input: 
+return: 
+description: matches, match
+
+NONBLANKLINETOKEN
+input: 
+return: 
+description: none blank line, nonblankline
+
+NOT
+input: 
+return: 
+description: not, unless, no
+
+NUMBERTOKEN
+input: 
+return: 
+description: number, integer, numeral, numeric letter, numeric characters, digit, numeric part, numeric value
+
+OR
+input: 
+return: 
+description: or
+
+PRINT
+input: 
+return: 
+description: print, output, extract, list, search
+
+Position
+input: 
+return: 
+description: position
+
+REMOVE
+input: 
+return: 
+description: remove, drop, eliminate, delete, reject, ignore
+
+REPLACE
+input: 
+return: 
+description: replace, change, convert, substitute
+
+SEQ
+input: 
+return: 
+description: seq
+
+START
+input: 
+return: 
+description: start, beginning, starting, before, in_front_of, prefix, above
+
+STARTFROM
+input: 
+return: 
+description: start from
+
+STARTSWITH
+input: 
+return: 
+description: start with, beginning, starting
+
+STRING
+input: ck_string
+return: 
+description: string
+
+SelectString
+input: 
+return: 
+description: 
+
+TEXTTOKEN
+input: 
+return: 
+description: text, everything, content, part
+
+WHITESPACETOKEN
+input: 
+return: 
+description: white space, whitespace
+
+WORD
+input: 
+return: 
+description: word
+
+WORDSCOPE
+input: 
+return: 
+description: word scope
+
+WORDTOKEN
+input: 
+return: 
+description: word, field

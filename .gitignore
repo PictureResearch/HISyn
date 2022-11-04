@@ -1,0 +1,17 @@
+localNotes.txt
+third_party_pkgs/stanford-corenlp-full-2018-10-05/
+.ipynb_checkpoints/
+corenlp_server*
+.DS_Store
+*.pyc
+vscode/
+back_end/__pycache__/
+common_knowledge/__pycache__/
+domain_knowledge/__pycache__/
+front_end/__pycache__/
+tools/__pycache__/
+__pycache__/
+domain_knowledge/grammar_graph_buffer/*.pkl
+Documentation/python-grammar
+*test.ipynb
+Log/

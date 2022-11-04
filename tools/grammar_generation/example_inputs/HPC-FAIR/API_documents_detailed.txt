@@ -1,0 +1,33 @@
+name:	BuildingDataset
+type:
+return:	kernel_data_best.csv | kernel_stat.csv
+argument:	output.log
+description:	Merge kernel-level and data-level features by outer-join
+
+
+name:	ModelTraining
+type:
+return:	mergedDataSet.csv
+argument:	GPUTrace.csv, dataset.csv
+description:	collect & sort time measurements from all variants and report the top varaiant for each each kernel and data input
+
+
+name:	ModelEvaluation
+type:
+return:	labelledData.csv
+argument:	kernel_data_best.csv, mergedDataSet.csv
+description:	Adding the label of best-performing variants to the merged data
+
+
+name:	DataPreProcessing
+type:
+return:	GPUTrace.csv
+argument:	GPUTraceOutput.log
+description:	collect & filter baseline data-level features
+
+
+name:	DataCollection
+type:
+return:	dataset.csv
+argument:	nsight.log
+description:	collect baseline kernel-level features

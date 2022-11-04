@@ -1,0 +1,1400 @@
+Insert ":" after #1st word
+INSERT(STRING(:), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a ":" immediately after a sequence of numbers
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert ":" before every #1st word
+INSERT(STRING(:), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Put ":" before the #1st " " in every line
+INSERT(STRING(:), Position(BEFORE(STRING( )), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Enter ":" before " "
+INSERT(STRING(:), Position(BEFORE(STRING( )), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Put ":" before the #1st " " in every line
+INSERT(STRING(:), Position(BEFORE(STRING( )), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Enter ":" before " "
+INSERT(STRING(:), Position(BEFORE(STRING( )), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+put ":" before a " "
+INSERT(STRING(:), Position(BEFORE(STRING( )), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+put ":" after the #1st word
+INSERT(STRING(:), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert ":" after the integer in each line
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace " " by ":" and " "
+REPLACE(SelectString(STRING( ), BConditionOccurrence(ALWAYS(), ALL())), BY(CONCATENATE(STRING(:), STRING( ))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+put ":" after every numeral in every line
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+after #1st word put ":"
+INSERT(STRING(:), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a ":" after the #1st word in every line
+INSERT(STRING(:), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert ":" before #1st " "
+INSERT(STRING(:), Position(BEFORE(STRING( )), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a ":" after numbers in each line
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert a ":" after #1st numeric letter
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add a ":" after the number
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append a ":" after an integer
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert ":" after #1st word of the sentence
+INSERT(STRING(:), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert ":" after the word that starts with "Day"
+INSERT(STRING(:), END(), IterationScope(WORDSCOPE(), BConditionOccurrence(STARTSWITH(STRING(Day)), ALL())))
+
+Insert ":" in every line after the numbers
+INSERT(STRING(:), Position(AFTER(NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "| " after the #1st occurrence of " "
+INSERT(STRING(| ), Position(AFTER(STRING( )), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a "|" and a " " before the #1st word in every line
+INSERT(CONCATENATE(STRING(|), STRING( )), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+for each line, put a "|" before the #1st word of the line
+INSERT(STRING(|), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+add "|" before #1st word
+INSERT(STRING(|), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+add a "|" character before the #1st word
+INSERT(STRING(|), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+put "| " before #1st " "
+INSERT(STRING(| ), Position(BEFORE(STRING( )), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+put "|" before the #1st word
+INSERT(STRING(|), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "| " to the beginning of the #1st word
+INSERT(STRING(| ), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert "|" followed by a " " before the #1st word in each line
+INSERT(CONCATENATE(STRING(|), STRING( )), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert "| " just before the #1st word
+INSERT(STRING(| ), Position(BEFORE(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+prepend each line with "NM-"
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" to the beginning of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" to the beginning of every sentence
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add the string "NM-" at the beginning of every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" to the beginning of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" to every new line
+INSERT(STRING(NM-), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" as prefix to every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+place "NM-" before every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert "NM-" before each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+At the starting of every line, add "NM-"
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" in the beginning of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" at the starting of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" in the beginning in every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" to the beginning of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" before each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert "NM-" before every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append "NM-" at the start of all lines
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" before #1st letter in every line
+INSERT(STRING(NM-), Position(BEFORE(CHARTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" at the starting of each statement
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" to the start of every string
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+add "NM-" in the beginning of each line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+insert text "NM-" in the starting of every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" before every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" before all strings
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" in front of every line
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "NM-" in all the #4 lines before the occurrence of "Com"
+INSERT(STRING(NM-), Position(BEFORE(STRING(Com)), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+add "NM-" at the start of the lines
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Prefix "NM-" to the beginning
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+append "NM-" to the beginning
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append "NM-"
+INSERT(STRING(NM-), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append "NM-" to the beginning
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "NM-" at the beginning of all lines
+INSERT(STRING(NM-), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "$" at the beginning of those lines that do not already start with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+If a sentence does not start with "$" then insert "$" at its beginning.
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+If a line does not start with a "$" add a "$" at its beginning
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+except line #2nd and #6th, insert "$" in starting of every line
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(2), INTEGER(6))))))
+
+Insert "$" before every line that does not start with "$".
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Add "$" at the beginning of all the sentences in A which do not start with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" in all lines at the beginning not starting with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" before each line not starting with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" in all lines at the beginning not starting with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" before each line not starting with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" before every line that does not starts with "$"
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Add "$" at the beginning of each statement if "$" is not present.
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(CONTAINS(STRING($))), ALL())))
+
+add "$" in the beginning of all the lines wherever "$" is not present.
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(CONTAINS(STRING($))), ALL())))
+
+insert "$" at the starting of every line except #2nd and #1st line
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(1), INTEGER(2))))))
+
+Insert "$" in every line not starting with "$"
+INSERT(STRING($), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Insert "$" in every line whose starting is not a "$" already
+INSERT(STRING($), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Put "$" in the start of each line if it has no "$" at the start
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+if statement does not starts with "$" add "$" in the beginning
+INSERT(STRING($), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Prepend the line containing "P.O. BOX" with "*"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+Add "*" at the beginning of every sentence containing the word "Box"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(WORD(STRING(Box))), ALL())))
+
+add "*" in the start of line that contains "P.O."
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.)), ALL())))
+
+Add a "*" at the beginning of the line in which the string "P.O. BOX" occurs
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+Put "*" at the beginning of #2nd, #6th, #8th, #13th line
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(13), INTEGER(2), INTEGER(6), INTEGER(8)))))
+
+put a "*" before each line that has "P.O. BOX" embedded within it
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+Put "*" in front of lines with "P.O. Box" as a substring
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. Box)), ALL())))
+
+insert "*" before every line that starts with "P"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(P)), ALL())))
+
+insert "*" before the lines that starts with "1" or starts with "C"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(OR(STARTSWITH(STRING(1)), STARTSWITH(STRING(C))), ALL())))
+
+Insert "*" at the beginning of each line containing "P.O. BOX"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+Insert "*" at the start of every line which has "P.O.BOX" word
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(WORD(STRING(P.O.BOX))), ALL())))
+
+Insert "*" before every line that has the occurrence of "P.O.BOX"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.BOX)), ALL())))
+
+Add "*" in the beginning of the line which contains "P.O. BOX"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+add "*" in beginning of all the lines wherever "P.O. BOX" is present
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+insert a "*" at the beginning in the sentence which has "P.O.BOX" in it
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.BOX)), ALL())))
+
+insert "*" at the start of the sentence where the sentence consists of "P.O."
+INSERT(STRING(*), Position(BEFORE(LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.)), ALL())))
+
+Insert "*" in front of every line containing "P.O. BOX" in it
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O. BOX)), ALL())))
+
+add "*" at the start of every line which has the word "P.O.BOX"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(WORD(STRING(P.O.BOX))), ALL())))
+
+Put "*" at the start of those line which contain "P.O.BOX"
+INSERT(STRING(*), START(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.BOX)), ALL())))
+
+if sentence contain "P.O." as a substring add "*" before the sentence
+INSERT(STRING(*), Position(BEFORE(LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(P.O.)), ALL())))
+
+add "-- from Bill" to each line that starts with "Exercise"
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Add " -- from Bill" to the end of every sentence ending with a digit.
+INSERT(STRING( -- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ENDSWITH(DIGITTOKEN()), ALL())))
+
+In every line beginning with "Exercise", append "-- from Bill" towards the end.
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Add the string " -- from Bill" at the end of every line which contains a "H".
+INSERT(STRING( -- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(H)), ALL())))
+
+if line begins with "Exercise H", put "--from Bill" at the end of line
+INSERT(STRING(--from Bill), Position(AFTER(LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise H)), ALL())))
+
+Append "-- from Bill" in every line containing numerals
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(NUMBERTOKEN()), ALL())))
+
+Insert "--from Bill" at the end of each line which does not end with "."
+INSERT(STRING(--from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(ENDSWITH(STRING(.))), ALL())))
+
+add "--from Bill" in every #2 lines starting from the #1st
+INSERT(STRING(--from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), STARTFROM(INTEGER(1))))))
+
+If sentence start from "Exercise" then at the end add "-- from Bill"
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Insert "-- from Bill" at the end of every line which starts with "Exercise"
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Append " -- from Bill" in every line starting with "Exercise"
+INSERT(STRING( -- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Add "--from Bill" at the end of line which has "%%" character
+INSERT(STRING(--from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(%%)), ALL())))
+
+if Sentence starts with "Exercise", add "--from Bill" after #14 characters
+INSERT(STRING(--from Bill), Position(AFTER(CHARTOKEN()), IntegerSet(INTEGER(14))), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise)), ALL())))
+
+Append "-- from Bill" in every #2 lines.
+INSERT(STRING(-- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Add " -- from Bill" to the end of every statement starting with "Exercise %%"
+INSERT(STRING( -- from Bill), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Exercise %%)), ALL())))
+
+Insert "..???" at the end of lines #2, #4, #6 and #8
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2), INTEGER(4), INTEGER(6), INTEGER(8)))))
+
+Add the string "..???" at the end of every #2nd line.
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+In the every #2 lines, add "..???"
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+At the end of every #2nd line, add "..???"
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Insert "..???" in every #2 lines at last
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Add "..???" at the last of every #2nd statement
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Put "..???" in every #2 lines
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Insert "..???" at the end of every #2 lines
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+insert "..???" after ending of every #2 lines
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Insert ".." and "???" in every #2nd line
+INSERT(CONCATENATE(STRING(..), STRING(???)), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Insert "...???" at the end of every #2nd line starting from the #2nd line.
+INSERT(STRING(...???), Position(AFTER(LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), STARTFROM(INTEGER(2))))))
+
+Insert "..???" at the end of line in every #2nd line
+INSERT(STRING(..???), Position(AFTER(LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+put "..???" at the end of every #2 coming lines
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Suffix every #2 line with "..???"
+INSERT(STRING(..???), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Replace "St." with "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "St." wherever it occurs with "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace all the occurrences of "St." with "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+For each line, if it ends with "St.", replace "St." by "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ENDSWITH(STRING(St.)), ALL())))
+
+replace "St." to "street" in #4th , #6th and #7th line
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(4), INTEGER(6), INTEGER(7)))))
+
+convert the string "St." to "Street" in every line
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Convert all "St." to "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "St." by "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Convert "St." to "Street" at the end of #4th , #6th and #7th line
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Street)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(4), INTEGER(6), INTEGER(7)))))
+
+replace "St." with the word "Street"
+REPLACE(SelectString(STRING(St.), BConditionOccurrence(ALWAYS(), ALL())), BY(WORD(STRING(Street))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+replace "to" with "for"
+REPLACE(SelectString(STRING(to), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(for)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+replace "to" with "for" in each sentence
+REPLACE(SelectString(STRING(to), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(for)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+replace the text in between "L" and "R" by "details"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(L), STRING(R), IMM()), ALL())), BY(STRING(details)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the text inside "L" and "R" with "details"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(L), STRING(R), IMM()), ALL())), BY(STRING(details)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the text between "L" and "R" with the word "details"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(L), STRING(R), IMM()), ALL())), BY(WORD(STRING(details))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the contents in between "L" and "R" with "details"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(L), STRING(R), IMM()), ALL())), BY(STRING(details)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+For every line, remove the number between "-" and "-"
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Eliminate all the characters between "-" and "-"
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #4th, #5th and #6th digits from all lines
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(4), INTEGER(5), INTEGER(6)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #2nd number from each line
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+delete the #2nd number from each line.
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the words that are between "-" and "-"
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove "L" and remove "R"
+SEQ(REMOVE(SelectString(STRING(L), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(R), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+remove all "L" and remove all "R"
+SEQ(REMOVE(SelectString(STRING(L), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(R), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+for each line, remove the "L" and remove "R"
+SEQ(REMOVE(SelectString(STRING(L), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(R), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+remove "L" and remove "R" from each line
+SEQ(REMOVE(SelectString(STRING(L), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(R), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Eliminate the characters #1st, #5th, #6th and #10th from all the lines.
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1), INTEGER(10), INTEGER(5), INTEGER(6)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove Numbers
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove only the numeric characters. 
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #1st word of the line which starts with a number
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(NUMBERTOKEN()), ALL())))
+
+Remove the numbers from all lines except the #2nd one
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(2))))))
+
+remove digits in each line
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove numbers from each line except line #2
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(2))))))
+
+Remove the numbers from the text
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the numerals from every line.
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove numbers from all sentences in A
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the numerals from every line.
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove numbers from all sentences in A
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Drop all numbers.
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove numeric values from all the lines
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+if any word have digits at the beginning of it then remove digits
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(WORDSCOPE(), BConditionOccurrence(STARTSWITH(DIGITTOKEN()), ALL())))
+
+remove digits from sentence
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the numbers from each line
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove digits from #1st #3rd and #4th line
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1), INTEGER(3), INTEGER(4)))))
+
+Remove the numbers from each line
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the digits
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all the numeric part of the text
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the numbers from all the lines
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the line containing "St" or containing "Lane" except the #1st line
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(OR(CONTAINS(STRING(St)), CONTAINS(STRING(Lane))), ALLBUT(IntegerSet(INTEGER(1))))))
+
+Remove the sentence if it does not contain the string "Cent"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(Cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove line #3rd and #4th
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3), INTEGER(4)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #3rd and #4th line
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3), INTEGER(4)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the sentences which does not contain "Cent" as its part
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(Cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Eliminate the #3rd and #4th line
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3), INTEGER(4)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Eliminate the line which does not contain "Cent" in any word of the sentence
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(Cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all lines which do not contain "Cent"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(Cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the line if it does not contain "cent" as a substring
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete those lines that do not contain "Cent"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(Cent))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the characters after ";" in each sentence
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+In each line remove all the characters after ";"
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all text in a line starting from "//"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(STARTSWITH(STRING(//)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+In each line, remove everything after the ";"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove text beginning with "//"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(STARTSWITH(STRING(//)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove everything after endpoints ";"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+In every line, delete the text after "//"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove all the characters after ";" in all the lines
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the text after symbol ";"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove anything that follows after ";"
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the words after the "//"
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Drop everything after ";" in each line
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+In each line, remove the part after "//"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+In each line, remove the part after ";"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove everything after ";" in each line.
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove text after ";" from each line
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove everything after ";" from the sentence
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+in each line, remove everything after "//"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all text that is written after ";"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove everything after ";" till the end of the row 
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print everything before ";"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BEFORECOND(STRING(;), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove everything that comes after "//" in each line
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove every character after "//"
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(//), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #1st character
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #1st occurrence of "&" from the all of the above lines
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #1st "&" symbol from all the lines
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #1st character from every line
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the #1st symbol "&" with "-" from every line
+REPLACE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), BY(STRING(-)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+if "&" occurs at the beginning of line remove "&"
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(&)), ALL())))
+
+Remove #1st "&" from each line
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #1st occurrence of "&" form every line left to right. 
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #1st character form every row in every line.
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #1st "&" character from each line
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Eliminate the #1st character from all the lines
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+delete #1st occurrence of "&" symbol
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove "&" before every line
+REMOVE(SelectString(STRING(&), BConditionOccurrence(BEFORECOND(LINETOKEN(), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove every #1st occurrence of "&" from all the lines
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove the #1st occurrence of character "&" in the text
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+add "&"
+INSERT(STRING(&), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #1st occurrence of "&" in each line
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove #1st "&" from every line
+REMOVE(SelectString(STRING(&), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+print everything between the occurrences of "--" and "--"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(--), STRING(--), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract the word immediately following the #1st "--"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(--), IMM()), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+extract all words that have "www" or have "com"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(OR(CONTAINS(STRING(www)), CONTAINS(STRING(com))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove everything before "--"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(BEFORECOND(STRING(--), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract everything immediately after "-- " 
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(-- ), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract everything before next "--"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BEFORECOND(STRING(--), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all empty lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove blank lines if any.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove any empty line
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the lines containing no characters.
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(CHARTOKEN())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove Blank lines
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove the empty line
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove all the blank lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove empty lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove lines containing no characters.
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(CHARTOKEN())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove all blank lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the blank lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the blank lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the blank lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete empty lines.
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the "-" and remove the digits between "-" and "-"
+SEQ(REMOVE(SelectString(STRING(-), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Remove all the "-" and remove the number between "-" and "-"
+SEQ(REMOVE(SelectString(STRING(-), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Eliminate all the "-" and remove the characters between "-" and "-"
+SEQ(REMOVE(SelectString(STRING(-), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(-), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Remove everything before "--". 
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(BEFORECOND(STRING(--), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove the "--"
+REMOVE(SelectString(STRING(--), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract everything immediately after "-- " and till next "--"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(AND(AFTERCOND(STRING(-- ), IMM()), BEFORECOND(STRING(--), IMM())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "     " at beginning of each line.
+INSERT(STRING(     ), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add a "<" and " " to each line.
+INSERT(CONCATENATE(STRING(<), STRING( )), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add a "\n" after every nonblank line.
+INSERT(STRING(\n), Position(AFTER(NONBLANKLINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "$nbsp;$nbsp;" at the beginning of every line that does not start with "<".
+INSERT(STRING($nbsp;$nbsp;), START(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING(<))), ALL())))
+
+Add a ":" after the #8th character in each line.
+INSERT(STRING(:), Position(AFTER(CHARTOKEN()), IntegerSet(INTEGER(8))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+If some line does not end with a ".", add "."
+INSERT(STRING(.), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(ENDSWITH(STRING(.))), ALL())))
+
+Add the suffix "_IDM" to the word right after "idiom:"
+INSERT(STRING(_IDM), END(), IterationScope(WORDSCOPE(), BConditionOccurrence(AFTERCOND(STRING(idiom:), IMM()), ALL())))
+
+Add a "." at the end of any line which does not already have "."
+INSERT(STRING(.), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(CONTAINS(STRING(.))), ALL())))
+
+Add "/VB" at the end of the #1st word in each line.
+INSERT(STRING(/VB), Position(AFTER(WORDTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Next to the #1st character, add an "!"
+INSERT(STRING(!), Position(AFTER(CHARTOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+On every #2 lines, insert an "\t"
+INSERT(STRING(\t), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))))
+
+Add an additional "\n" between line and line
+INSERT(STRING(\n), Position(BETWEEN(LINETOKEN(), LINETOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "," characters between number and number in the line
+INSERT(STRING(,), Position(BETWEEN(NUMBERTOKEN(), NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Put "-" between number and number
+INSERT(STRING(-), Position(BETWEEN(NUMBERTOKEN(), NUMBERTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append at the end of the line "THE END"
+INSERT(STRING(THE END), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Append "***" to the end of lines starting with "Fred"
+INSERT(STRING(***), END(), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(Fred)), ALL())))
+
+Add a "$" to the lines unless it already starts with a "$"
+INSERT(STRING($), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(STARTSWITH(STRING($))), ALL())))
+
+Add "," to words
+INSERT(STRING(,), END(), IterationScope(WORDSCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add an "!" followed by a "?" at the end of every word
+INSERT(CONCATENATE(STRING(!), STRING(?)), Position(AFTER(WORDTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add a ":" after the #80th character in each line
+INSERT(STRING(:), Position(AFTER(CHARTOKEN()), IntegerSet(INTEGER(80))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a "\n" above every line that matches "ABC"
+INSERT(STRING(\n), START(), IterationScope(LINESCOPE(), BConditionOccurrence(MATCHES(STRING(ABC)), ALL())))
+
+Insert above the #1st line the title "PERSONNEL FILE"
+INSERT(STRING(PERSONNEL FILE), Position(BEFORE(LINETOKEN()), IntegerSet(INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert a "\n" after every #3 lines
+INSERT(STRING(\n), Position(AFTER(LINETOKEN()), EVERY(INTEGER(3), INTEGER(1))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Attach "rfc" before all words including an "@"
+INSERT(STRING(rfc), START(), IterationScope(WORDSCOPE(), BConditionOccurrence(CONTAINS(STRING(@)), ALL())))
+
+Place "," between word and word in each line
+INSERT(STRING(,), Position(BETWEEN(WORDTOKEN(), WORDTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+After each instance of "href=", add "page="
+INSERT(STRING(page=), Position(AFTER(STRING(href=)), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "\n" between digit and digit
+INSERT(STRING(\n), Position(BETWEEN(DIGITTOKEN(), DIGITTOKEN()), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Put a "\" before a current "\"
+INSERT(STRING(\), Position(BEFORE(STRING(\)), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Insert "\" right before opening "<"
+INSERT(STRING(\), Position(BEFORE(STRING(<)), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Place a " " between ";" and ";"
+INSERT(STRING( ), Position(BETWEEN(STRING(;), STRING(;)), ALL()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Place "FINISH" at the end of line only if it does not already end with "FINISH"
+INSERT(STRING(FINISH), END(), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(ENDSWITH(STRING(FINISH))), ALL())))
+
+Insert "BEGIN" at the beginning of text
+INSERT(STRING(BEGIN), START(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Add "END" at the end of the file
+INSERT(STRING(END), END(), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove all instances of "|"
+REMOVE(SelectString(STRING(|), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all blank lines
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the last #2 lines of the input
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the lines between an occurrence of "start" and an occurrence of "stop"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(BETWEENCOND(STRING(start), STRING(stop), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove every #3 occurrence of the word "Apple"
+REMOVE(SelectString(STRING(Apple), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(3), INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all consecutive blank lines from the input 
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the #1st number on all lines that start with a "%%"
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(%%)), ALL())))
+
+Remove the string " " from every line whose immediately following line is "INPUT"
+REMOVE(SelectString(STRING( ), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(AFTERCOND(LINE(STRING(INPUT)), IMM()), ALL())))
+
+Delete the first #3 lines
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), FIRSTFEW(INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all empty lines
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete every #4th line
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(4), INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove "!" everywhere except in the lines between "start" and "stop"
+REMOVE(SelectString(STRING(!), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(BETWEENCOND(STRING(start), STRING(stop), IMM())), ALL())))
+
+Delete every line that has a "," or has "and" in it
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(OR(CONTAINS(STRING(,)), CONTAINS(STRING(and))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the last line of the input
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all the #2nd fields ending in "500"
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ENDSWITH(STRING(500)), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete lines containing "Lane"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(Lane)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the #1st number on line #3
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3)))))
+
+Delete the #2nd field on each line
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete "<" from each line
+REMOVE(SelectString(STRING(<), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete lines that match regular expression pattern "ABC"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(MATCHES(STRING(ABC)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the last word
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all consecutive blank lines from the input except the first #2
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALLBUT(FIRSTFEW(INTEGER(2))))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all blank lines from the input
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove a line containing "del"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(del)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove a line ending with "&D"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ENDSWITH(STRING(&D)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the #2nd occurrence of a line ending in "c" from the file
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ENDSWITH(STRING(c)), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the #1st and #3rd columns of the input
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1), INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+delete the first #3 words
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), FIRSTFEW(INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all digits in the #2nd word
+REMOVE(SelectString(DIGITTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(WORDSCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))))
+
+Delete " " between the word and "\r" of each sentence
+REMOVE(SelectString(STRING( ), BConditionOccurrence(BETWEENCOND(WORDTOKEN(), STRING(\r), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+delete everything inside "<" and ">"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all blank lines between line and line
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(BETWEENCOND(LINETOKEN(), LINETOKEN(), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the terminal "/" on every line but the last #1
+REMOVE(SelectString(STRING(/), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(LASTONE()))))
+
+Remove the #2nd instance of the line "The mulberry bush"
+REMOVE(SelectString(LINE(STRING(The mulberry bush)), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the "n" before an "e" or after an "o"
+REMOVE(SelectString(STRING(n), BConditionOccurrence(OR(BEFORECOND(STRING(e), IMM()), AFTERCOND(STRING(o), IMM())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+remove all "." and remove all ","
+SEQ(REMOVE(SelectString(STRING(.), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(,), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Eliminate the #1st number on each line
+REMOVE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all but the #1st occurrence of "Cook"
+REMOVE(SelectString(STRING(Cook), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(1))))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the word "the" wherever it comes after "all"
+REMOVE(SelectString(WORD(STRING(the)), BConditionOccurrence(AFTERCOND(STRING(all), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all characters between "a" and "d" in the same word
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(a), STRING(d), IMM()), ALL())), IterationScope(WORDSCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+delete every line that contains "&" or contains word "and"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(OR(CONTAINS(STRING(&)), CONTAINS(WORD(STRING(and)))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete "Kookaburra" anywhere if it is followed by a ","
+REMOVE(SelectString(STRING(Kookaburra), BConditionOccurrence(BEFORECOND(STRING(,), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete all empty lines
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the last #10 lines of a file
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(10)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete every #8th line
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(8), INTEGER(1)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove text between "[img]" and "[/img]"
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING([img]), STRING([/img]), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the character "a" unless it comes before an "r"
+REMOVE(SelectString(STRING(a), BConditionOccurrence(NOT(BEFORECOND(STRING(r), IMM())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Reject words which have numbercharacters in them
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(DIGITTOKEN()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all symbols which are not numbers
+REMOVE(SelectString(CHARTOKEN(), BConditionOccurrence(NOT(MATCHES(NUMBERTOKEN())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Delete the bottom #3 lines
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove lines having the character "$"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING($)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove text after "." in each line
+REMOVE(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(.), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove the word "sparkle" from the file
+REMOVE(SelectString(WORD(STRING(sparkle)), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove lines that begin with "ie6"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(STARTSWITH(STRING(ie6)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove all spaces
+REMOVE(SelectString(WHITESPACETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove blanklines before the nonblankline of text
+REMOVE(SelectString(BLANKLINETOKEN(), BConditionOccurrence(BEFORECOND(NONBLANKLINETOKEN(), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove "---" in the file.
+REMOVE(SelectString(STRING(---), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Remove "" and remove ""
+SEQ(REMOVE(SelectString(STRING(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Remove lines that include the string "doesn't work"
+REMOVE(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(doesn't work)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Ignore every word that contains digits from every #3rd line
+REMOVE(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(DIGITTOKEN()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(3), INTEGER(1)))))
+
+Replace every "++" with "+"
+REPLACE(SelectString(STRING(++), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(+)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute  the #4th occurrence of "foo" with "bar" on each line
+REPLACE(SelectString(STRING(foo), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(4)))), BY(STRING(bar)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the line containing "Jose" with "JOSE HAS RETIRED"
+REPLACE(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(Jose)), ALL())), BY(STRING(JOSE HAS RETIRED)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "A" with "a" in the first #3 line
+REPLACE(SelectString(STRING(A), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(a)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), FIRSTFEW(INTEGER(3)))))
+
+replace "a" with "b" in all lines
+REPLACE(SelectString(STRING(a), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(b)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "DOG" with "dog" in the last #2 lines
+REPLACE(SelectString(STRING(DOG), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(dog)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(2)))))
+
+replace all "," with "|"
+REPLACE(SelectString(STRING(,), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(|)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace every #2nd occurrence of "mutex->list" with "mutex->queue"
+REPLACE(SelectString(STRING(mutex->list), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), INTEGER(1)))), BY(STRING(mutex->queue)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "Cat" with "Dog" in all lines except the first #2 lines
+REPLACE(SelectString(STRING(Cat), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Dog)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALLBUT(FIRSTFEW(INTEGER(2))))))
+
+replace all whitespace gaps to a " "
+REPLACE(SelectString(WHITESPACETOKEN(), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING( )), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace every #3rd occurrence of the line "--------"  with a "\n"
+REPLACE(SelectString(LINE(STRING(--------)), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(3), INTEGER(1)))), BY(STRING(\n)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute only the last occurrence of "foo" with "bar"
+REPLACE(SelectString(STRING(foo), BConditionOccurrence(ALWAYS(), LASTONE())), BY(STRING(bar)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "foo" with "bar" only on lines that do not contain "baz"
+REPLACE(SelectString(STRING(foo), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(bar)), IterationScope(LINESCOPE(), BConditionOccurrence(NOT(CONTAINS(STRING(baz))), ALL())))
+
+Replace the first occurrence of "dog" in a line having "mouse" with an occurrence of "cat"
+REPLACE(SelectString(STRING(dog), BConditionOccurrence(ALWAYS(), FIRSTONE())), BY(STRING(cat)), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(mouse)), ALL())))
+
+Replace each occurrence of the number "92" with an "%%"
+REPLACE(SelectString(STRING(92), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(%%)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the "/" with a " "
+REPLACE(SelectString(STRING(/), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING( )), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "sq" with "dq" 
+REPLACE(SelectString(STRING(sq), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(dq)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace all substrings "1250" by "120" unless the word starts with "run"
+REPLACE(SelectString(STRING(1250), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(120)), IterationScope(WORDSCOPE(), BConditionOccurrence(STARTSWITH(STRING(run)), ALL())))
+
+Replace "<" with "-LRB-"
+REPLACE(SelectString(STRING(<), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(-LRB-)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "!" with a "," and "\n"
+REPLACE(SelectString(STRING(!), BConditionOccurrence(ALWAYS(), ALL())), BY(CONCATENATE(STRING(,), STRING(\n))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change "day" to "night" in the input
+REPLACE(SelectString(STRING(day), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(night)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change the name "Jon" to "Jonathan"
+REPLACE(SelectString(STRING(Jon), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(Jonathan)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change every word on a line but the #3rd to "Deleted"
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), ALLBUT(IntegerSet(INTEGER(3))))), BY(STRING(Deleted)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Convert every " " into a "\n"
+REPLACE(SelectString(STRING( ), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(\n)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change all instances of "Mullberry Bush" to "mullberry bush."
+REPLACE(SelectString(STRING(Mullberry Bush), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(mullberry bush.)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "Mary" with "John" in lines #2nd, #3rd, #4th and #5th
+REPLACE(SelectString(STRING(Mary), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(John)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2), INTEGER(3), INTEGER(4), INTEGER(5)))))
+
+In every line, replace the word next to "abc" by "Replaced"
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(abc), IMM()), ALL())), BY(STRING(Replaced)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace any sequence of one or more whitespace except those anywhere inside "<" and ">" with a " "
+REPLACE(SelectString(WHITESPACETOKEN(), BConditionOccurrence(NOT(BETWEENCOND(STRING(<), STRING(>), IMM())), ALL())), BY(STRING( )), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "word" with "board" everywhere in the input
+REPLACE(SelectString(STRING(word), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(board)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Substitute "ABC" with "BCA"
+REPLACE(SelectString(STRING(ABC), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(BCA)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace every occurrence of ".." with "."
+REPLACE(SelectString(STRING(..), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(.)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "&" with "&&" unless it is inside "'" and "'"
+REPLACE(SelectString(STRING(&), BConditionOccurrence(NOT(BETWEENCOND(STRING('), STRING('), IMM())), ALL())), BY(STRING(&&)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace " " with ""
+REPLACE(SelectString(STRING( ), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change all occurrences of "fontcolor" to "color"
+REPLACE(SelectString(STRING(fontcolor), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(color)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "eregi" with "preg_match"
+REPLACE(SelectString(STRING(eregi), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(preg_match)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "enrol" with "enroll"
+REPLACE(SelectString(STRING(enrol), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(enroll)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the #2nd word in each line with "TWO"
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(2)))), BY(STRING(TWO)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace any word ending with ".com" with "WEBSITE"
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(ENDSWITH(STRING(.com)), ALL())), BY(STRING(WEBSITE)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+If "/start/here/" is at the beginning of the line, replace "/start/here/" with "/testdir/"
+REPLACE(SelectString(STRING(/start/here/), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(/testdir/)), IterationScope(LINESCOPE(), BConditionOccurrence(STARTSWITH(STRING(/start/here/)), ALL())))
+
+Replace the word "10" with "ten"
+REPLACE(SelectString(WORD(STRING(10)), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(ten)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace " " with "break"
+REPLACE(SelectString(STRING(	), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(break)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "'" with " "
+REPLACE(SelectString(STRING('), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING( )), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace all numbers with "*"
+REPLACE(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(*)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace "f" with "//"
+REPLACE(SelectString(STRING(f), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(//)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the word "pt" with "thousands"
+REPLACE(SelectString(WORD(STRING(pt)), BConditionOccurrence(ALWAYS(), ALL())), BY(STRING(thousands)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace the first "." in every line with a ":"
+REPLACE(SelectString(STRING(.), BConditionOccurrence(ALWAYS(), FIRSTONE())), BY(STRING(:)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace all characters immediately followed by "s" with "*"
+REPLACE(SelectString(CHARTOKEN(), BConditionOccurrence(BEFORECOND(STRING(s), IMM()), ALL())), BY(STRING(*)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace words beginning with ""
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(STARTSWITH(STRING()), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace text between "" and "" with "1"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(), STRING(), IMM()), ALL())), BY(STRING(1)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Change all words ending in ".jpg" to "REMOVED"
+REPLACE(SelectString(WORDTOKEN(), BConditionOccurrence(ENDSWITH(STRING(.jpg)), ALL())), BY(STRING(REMOVED)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Replace what is between "dq" and "dq" with "*"
+REPLACE(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(dq), STRING(dq), IMM()), ALL())), BY(STRING(*)), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the lines after the word "SUBJECT:"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(AFTERCOND(WORD(STRING(SUBJECT:)), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the last field of the last line
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), LASTONE())))
+
+Search for lines that contain "0" or contains whitespaces
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(OR(CONTAINS(STRING(0)), CONTAINS(WHITESPACETOKEN())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+list the #3rd field of those lines of the file in which the letter "r" appears
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(CONTAINS(STRING(r)), ALL())))
+
+Print the last #2 lines of a file
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Find everything between "<" and ">" and print it
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the last field of each line
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all words containing the "a" anywhere in the word
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(STRING(a)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print a line if it contains "AAA" and contains "BBB" in any order
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(AND(CONTAINS(STRING(AAA)), CONTAINS(STRING(BBB))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+print just the #4th field of the record ending in "\"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(4)))), IterationScope(LINESCOPE(), BConditionOccurrence(ENDSWITH(STRING(\)), ALL())))
+
+Print everything between an occurrence of  "???" and "/???"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(???), STRING(/???), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print line numbered #52
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(52)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print lines containing "Lincoln" or containing "lincoln"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(OR(CONTAINS(STRING(Lincoln)), CONTAINS(STRING(lincoln))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print out any input line that mentions "mark" and mentions "mary"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(AND(CONTAINS(STRING(mark)), CONTAINS(STRING(mary))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+List words ending in "x" or ending in "y"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(OR(ENDSWITH(STRING(x)), ENDSWITH(STRING(y))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+search the lines containing the word "WORD"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(WORD(STRING(WORD))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+List fields ending in "10" or ending in "11"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(OR(ENDSWITH(STRING(10)), ENDSWITH(STRING(11))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the last line of a file
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all words beginning with "D"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(STARTSWITH(STRING(D)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the #2nd word after pattern "ABC" on every line
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(ABC), IMM()), IntegerSet(INTEGER(2)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines ending in "700"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ENDSWITH(STRING(700)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines containing the string "San"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(San)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines in the file containing the string "error"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(error)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print out any line that mentions "mark"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(STRING(mark)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+print every #2 from #1 lines
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), EVERY(INTEGER(2), STARTFROM(INTEGER(1))))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines that do not contain "834"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(834))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the last #10 lines of a file
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(ALWAYS(), LASTFEW(INTEGER(10)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines that matches "107:"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(MATCHES(STRING(107:)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+print every line which contains the word "java"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(CONTAINS(WORD(STRING(java))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all words beginning with "C" or beginning with "E"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(OR(STARTSWITH(STRING(C)), STARTSWITH(STRING(E))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all records after "107" on every line
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(AFTERCOND(STRING(107), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all lines starting with an "a" or starting with "A"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(OR(STARTSWITH(STRING(a)), STARTSWITH(STRING(A))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print only the first #5 characters
+PRINT(SelectString(CHARTOKEN(), BConditionOccurrence(ALWAYS(), FIRSTFEW(INTEGER(5)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract all numbers
+PRINT(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all the words enclosed in "<" and ">"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the #3rd field of the file and remove the ","
+SEQ(PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(3)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))), REMOVE(SelectString(STRING(,), BConditionOccurrence(ALWAYS(), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL()))))
+
+Output every symbol between "<" and ">"
+PRINT(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Find the first occurrence of "@" and print the next character
+PRINT(SelectString(CHARTOKEN(), BConditionOccurrence(AFTERCOND(STRING(@), IMM()), FIRSTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print everything after "<" and before a ","
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(AND(BEFORECOND(STRING(,), IMM()), AFTERCOND(STRING(<), IMM())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print every word which starts with a ":"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(STARTSWITH(STRING(:)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print everything before "=" wherever it is
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BEFORECOND(STRING(=), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print any word that starts with "player" and is followed somewhere by "team"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AND(BEFORECOND(STRING(team), IMM()), STARTSWITH(STRING(player))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Extract the word following "from"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(from), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print characters between "<" and ">"
+PRINT(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words which are not in between "/*" or "*/"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(NOT(BETWEENCOND(STRING(/*), STRING(*/), IMM())), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print a line if it contains ""
+PRINT(SelectString(NUMBERTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(<), STRING(>), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print text after "ID: " in each line
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(AFTERCOND(STRING(ID: ), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print every instance of a word immediately following "RFA"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(RFA), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Do not print words that end in ".aspx"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(NOT(ENDSWITH(STRING(.aspx))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words immediately preceded by "public"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AFTERCOND(STRING(public), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print numbers that are immediately followed by the word "minutes"
+PRINT(SelectString(NUMBERTOKEN(), BConditionOccurrence(BEFORECOND(WORD(STRING(minutes)), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Only print words which end in ".jpg" and include "mine.com"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(AND(ENDSWITH(STRING(.jpg)), CONTAINS(STRING(mine.com))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words that do not contain "k"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(NOT(CONTAINS(STRING(k))), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words beginning with "r"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(STARTSWITH(STRING(r)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print only lines that match "that's why"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(MATCHES(STRING(that's why)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print all words containing the letter "a"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(STRING(a)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Only print words which include "@"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(STRING(@)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words which include "article"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(STRING(article)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print characters between "http://" and ".com"
+PRINT(SelectString(CHARTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(http://), STRING(.com), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the first #4 words in each line
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), FIRSTFEW(INTEGER(4)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print data between a "-" and an "*"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(-), STRING(*), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the last number in each line
+PRINT(SelectString(NUMBERTOKEN(), BConditionOccurrence(ALWAYS(), LASTONE())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print lines that begin with "$result"
+PRINT(SelectString(LINETOKEN(), BConditionOccurrence(STARTSWITH(STRING($result)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print the #5th field in each line
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(ALWAYS(), IntegerSet(INTEGER(5)))), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words in the file consisting of numbers
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(CONTAINS(NUMBERTOKEN()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print words which match "NAME"
+PRINT(SelectString(WORDTOKEN(), BConditionOccurrence(MATCHES(STRING(NAME)), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))
+
+Print what is on each line between "&q" and the next "&"
+PRINT(SelectString(TEXTTOKEN(), BConditionOccurrence(BETWEENCOND(STRING(&q), STRING(&), IMM()), ALL())), IterationScope(LINESCOPE(), BConditionOccurrence(ALWAYS(), ALL())))

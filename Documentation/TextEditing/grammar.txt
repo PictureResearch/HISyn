@@ -1,0 +1,277 @@
+query	:=	command
+		|	seq
+
+seq		:= 	SEQ(command_1, command_2)
+
+command_1 	:= 	command
+
+command_2 	:= 	command
+
+command	:= 	replace
+		|	insert
+		|	remove
+		|	print
+
+replace	:= 	REPLACE(replace_arg)
+
+replace_arg :=  selectString
+            |   selectString, by, iterScope
+
+remove 	:= 	REMOVE(selectString, iterScope)
+
+insert 	:=	INSERT(insert_arg)
+
+insert_arg	:= 	string, position, iterScope
+			|	concatenate, position, iterScope
+
+print	:= 	PRINT(selectString, iterScope)
+
+selectString 	:= 	SelectString( selectStringElement, bConditionOccur )
+
+by 	:= 	BY(by_arg)
+
+selectStringElement		:= 	text_token
+						|	string
+						|	number_token
+						|	char_token
+						|	digit_token
+						|	word_token
+						|	line_token
+						|	blank_line_token
+						|	line
+						|	word
+						|	white_space_token
+
+by_arg 	:= 	word
+		|	string
+		|	concatenate
+
+iterScope	:= 	IterationScope(iter_arg)
+
+iter_arg 	:=	lineScope, bConditionOccur
+			|	wordScope, bConditionOccur
+
+string 	:=	STRING(ck_str)
+
+position 	:= 	END()
+			|	START()
+			|	Position(pos)
+
+concatenate	:=	CONCATENATE( string_1, string_2 )
+
+string_1		:= string
+
+string_2		:= string
+
+bConditionOccur	:= 	BConditionOccurrence(b_cond_occ_arg)
+
+b_cond_occ_arg 	:=	always, all
+				|	startsWith, all
+				| 	not, all
+				|	always, allbut
+				|	contains, all
+				|	always, integerSet
+				|	or, all
+				|	endsWith, all
+				|	always, every
+				|	betweenCond, all
+				|	afterCond, all
+				|	beforeCond, all
+				|	afterCond, integerSet
+				|	and, all
+				|	matches, all
+				|	always, lastFew
+				|	always, firstFew
+				|	always, lastOne
+				|	endsWith, integerSet
+				|	always, firstOne
+				|	startsWith, iterScope
+				|	afterCond, firstOne
+
+lastOne 	:=	LASTONE()
+
+firstOne 	:=	FIRSTONE()
+
+firstFew 	:= 	FIRSTFEW(integer)
+
+lastFew 	:= 	LASTFEW(integer)
+
+matches 	:=	MATCHES(matches_arg)
+
+matches_arg 	:=	string
+			|	number_token
+
+imm :=	IMM()
+
+betweenCond		:= 	BETWEENCOND(between_arg)
+
+between_arg 	:=	string_1, string_2, imm
+				|	word_token, string, imm
+				|	line_token_1, line_token_2, imm
+
+line_token_1    :=  line_token
+
+line_token_2    :=  line_token
+
+between := 	BETWEEN(bet_arg)
+
+bet_arg :=	line_token_1, line_token_2
+		|	number_token_1, number_token_2
+		|	word_token_1, word_token_2
+		| 	digit_token_1, digit_token_2
+		|	string_1, string_2
+
+number_token_1  :=  number_token
+
+number_token_2  :=  number_token
+
+word_token_1    :=  word_token
+
+word_token_2    :=  word_token
+
+digit_token_1   :=  digit_token
+
+digit_token_2   :=  digit_token
+
+afterCond 	:= 	AFTERCOND(after_cond_arg)
+
+after_cond_arg 	:=	string, imm
+				|	line, imm
+				|	word, imm 
+
+beforeCond 	:= 	BEFORECOND(before_cond_arg)
+
+before_cond_arg	:= 	string, imm
+				|	line_token, imm
+				| 	non_blank_line_token, imm
+
+and :=	AND(and_arg)
+
+and_arg :=	afterCond, beforeCond
+		|	contains_1, contains_2
+		| 	beforeCond, afterCond
+		| 	beforeCond, startsWith
+		|	endsWith, contains
+
+contains_1  :=  contains
+
+contains_2  :=  contains
+
+contains 	:= 	CONTAINS(contains_arg)
+
+contains_arg 	:= 	string
+				|	word
+				|	number_token
+				|	char_token
+				|	digit_token
+
+lineScope 	:= 	LINESCOPE()
+
+wordScope 	:= 	WORDSCOPE()
+
+text_token 	:= 	TEXTTOKEN()
+
+number_token	:= NUMBERTOKEN()
+
+char_token	:=	CHARTOKEN()
+
+digit_token	:=	DIGITTOKEN()
+
+word_token 	:=	WORDTOKEN()
+
+line_token 	:= 	LINETOKEN()
+
+blank_line_token	:=	BLANKLINETOKEN()
+
+non_blank_line_token 	:= 	NONBLANKLINETOKEN()
+
+line 	:= 	LINE(string)
+
+word 	:= 	WORD(string)
+
+white_space_token := 	WHITESPACETOKEN()
+
+pos := 	after, all
+	|	after, integerSet
+	|	before, all
+	|	before, integerSet
+	|	between, all
+	|	after, every
+
+before 	:= 	BEFORE(before_arg)
+
+before_arg 	:= 	word_token
+			|	string
+			|	char_token
+			|	line_token
+
+after 	:= AFTER(after_arg)
+
+after_arg 	:= 	word_token
+			|	number_token
+			| 	string
+			|	line_token
+			|	char_token
+			| 	non_blank_line_token
+
+always 	:= 	ALWAYS()
+
+all 	:=	ALL()
+
+startsWith 	:=	STARTSWITH(starts_with_arg)
+
+starts_with_arg :=	string
+				|	number_token
+				|	digit_token
+
+not 	:= 	NOT(not_arg)
+
+not_arg	:=	startsWith
+		|	contains
+		| 	endsWith
+		|	betweenCond
+		|	beforeCond
+		|	matches
+
+allbut 	:= 	ALLBUT(all_but_arg)
+
+all_but_arg :=	intergerSet
+ 			|	firstFew
+ 			|	lastOne
+
+integerSet 	:= 	IntegerSet(integer_set_arg)
+
+integer_set_arg	:=	integer, integer_arg_rec
+
+integer_arg_rec	:=	empty
+				|	integer, integer_arg_rec
+
+integer :=	INTEGER(ck_int)
+
+or 	:= 	OR(or_arg)
+
+or_arg	:= 	startsWith, starsWith
+		|	contains, contains
+		|	beforeCond, afterCond
+		| 	endsWith, endsWith
+
+endsWith	:= 	ENDSWITH(endswith_arg)
+
+endswith_arg 	:= 	digit_token
+				|	string
+
+every 	:= 	EVERY(every_arg)
+
+startFrom 	:= 	STARTFROM(integer)
+
+every_arg	:= 	frequency, start_position
+			|	frequency, startFrom
+
+frequency   :=  integer
+
+start_position  :=  integer_1
+
+integer_1   := INTEGER(ck_1)
+
+ck_1    :=  1st()
+

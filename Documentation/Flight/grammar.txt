@@ -1,0 +1,189 @@
+# todo: figure out the meaning of _imp
+
+query				:=	project
+					|	atomic_row_pred_set
+					|	col_set
+					| 	extract_row_max_t
+					|	extract_row_min_t
+					|	extract_row_min_f
+					|	extract_row_max
+					|	extract_row_min
+
+project 			:=	PROJECT( atomic_col_set, project_queries )
+
+atomic_row_pred_set	:= 	AtomicRowPredSet( atomic_row_preds )
+
+project_queries		:= 	atomic_row_pred_set
+					|	extract_row_min_f
+					|	extract_row_max_t
+					|	extract_row_min
+
+col_set 			:= 	ColSet( col )
+
+col 				:= 	atomic_col_set, extract_row_min_t
+					|	atomic_col_set, atomic_row_pred_set
+					|	atomic_col_set, extract_row_min
+
+extract_row_min_f 	:= 	EXTRACT_ROW_MIN_F( col_fare, atomic_row_pred_set )
+
+extract_row_max_t	:= 	EXTRACT_ROW_MAX_T( col_departure_time, atomic_row_pred_set )
+
+extract_row_min_t 	:= 	EXTRACT_ROW_MIN_T( col_departure_time, atomic_row_pred_set )
+
+extract_row_min 	:= 	EXTRACT_ROW_MIN( extract_row_m )
+
+extract_row_max 	:= 	EXTRACT_ROW_MAX( extract_row_m )
+
+extract_row_m 		:= 	atomic_col_set, atomic_row_pred_set
+
+col_fare 	 		:= 	COL_FARE()
+
+col_departure_time	:= 	COL_DEPARTURE_TIME()
+
+atomic_col_set		:= 	AtomicColSet( atomic_col )
+
+atomic_col			:= 	COL_FARE()
+					|	COL_DEPARTURE_TIME()
+					|	COL_AIRLINES()
+					|	COL_TRANSPORT()
+					|	COL_AIRCRAFT_TYPE()
+					|	COL_STOPS()
+					|	COL_ARRIVAL_TIME()
+
+#(could use 'e')
+atomic_row_preds 	:= 	atomic_row_pred
+					|	between_cities, eq_airlines
+					|	between_cities
+					|	atomic_row_pred, eq_airlines
+					|	atomic_row_pred, eq_airlines_imp
+					|	atomic_row_pred, eq_stops
+					|	eq_airport
+					|	eq_airport_imp
+					|	atomic_row_pred, eq_airlines, eq_stops
+					|	atomic_row_pred, eq_non_stop
+					|	atomic_row_pred, eq_aircraft_type_imp
+					|	atomic_row_pred, eq_aircraft_type
+					|	atomic_row_pred, eq_class
+					|	atomic_row_pred, eq_class, eq_stops
+					|	atomic_row_pred, eq_aircraft_type_imp, eq_airlines_imp, eq_non_stop
+					|	atomic_row_pred, eq_aircraft_type_imp, eq_airlines_imp
+					|	atomic_row_pred, eq_airlines_imp, eq_stops
+					|	atomic_row_pred, eq_aircraft_type_imp, eq_airlines
+					|	atomic_row_pred, eq_airlines, eq_class
+					|	atomic_row_pred, eq_airlines_imp, eq_class
+					|	between_cities, round_trip
+					|	atomic_row_pred, round_trip
+					|	eq_airlines_imp
+					|	eq_aircraft_type, eq_airlines_imp
+					|	atomic_row_pred, eq_class_imp, eq_non_stop
+					|	atomic_row_pred, eq_food_imp
+					|	eq_aircraft_type_imp, eq_airlines_imp, eq_food
+					|	between_cities, eq_stops
+					|	atomic_row_pred, eq_food
+					|	atomic_row_pred, eq_class, eq_class
+					|	between_cities, eq_airlines, eq_class
+					|	eq_airlines, eq_airport_imp
+					|	eq_airlines_imp, eq_airport_imp
+					|	between_cities, eq_airlines_imp, eq_class_imp
+					|	between_cities, eq_airlines_imp
+					|	atomic_row_pred, eq_airlines_imp, eq_class, round_trip
+					|	atomic_row_pred, eq_airlines, round_trip
+					|	eq_aircraft_type_imp, eq_airlines
+					|	eq_aircraft_type_imp
+					|	between_cities, eq_aircraft_type_imp
+					|	atomic_row_pred, eq_class_imp
+
+atomic_row_pred 	:= 	AtomicRowPred( atomic_row_pred_element )	
+
+atomic_row_pred_element	:=	eq_departs, eq_arrives
+					|	eq_departs_imp, eq_arrives
+					|	eq_departs, eq_arrives_imp
+
+between_cities 		:= 	BETWEEN_CITIES(eq_departs_imp, eq_arrives_imp)
+
+eq_departs 			:= 	EQ_DEPARTS(city, unit_time_set, weekday, daynum, month)
+
+eq_arrives 			:= 	EQ_ARRIVES(city, unit_time_set, weekday, daynum, month)
+
+eq_departs_imp 		:= 	Eq_Departs_IMP(city, unit_time_set, weekday, daynum, month)
+
+eq_arrives_imp 		:= 	Eq_Arrives_IMP(city, unit_time_set, weekday, daynum, month)
+
+eq_airlines 		:= 	EQ_AIRLINES(airlines)
+
+eq_airlines_imp		:= 	Eq_Airlines_IMP(airlines)
+
+eq_stops			:= 	EQ_STOPS( stops )
+
+eq_airport 			:=	EQ_AIRPORT(city)
+
+eq_airport_imp		:= 	Eq_Airport_IMP(city)
+
+eq_non_stop 		:= 	EQ_NON_STOP()
+
+eq_aircraft_type_imp :=	Eq_Aircraft_Type_IMP(aircraft)
+
+eq_aircraft_type 	:= 	EQ_AIRCRAFT_TYPE(aircraft)
+
+eq_class 			:= 	EQ_CLASS(class)
+
+round_trip			:= 	ROUND_TRIP()
+
+eq_class_imp		:= 	Eq_Class_IMP(class)
+
+eq_food_imp 		:= 	Eq_Food_IMP( food )
+
+eq_food 			:= 	EQ_FOOD( food )
+
+airlines 			:= 	AIRLINES(ck_airlines)
+
+aircraft 			:= 	AIRCRAFT(ck_aircraft)
+
+class 				:= 	CLASS(ck_class)
+
+unit_time_set 		:= 	ANY()
+					|	Unit_Time_Set( time_set )
+
+weekday				:= 	ANY()
+					|	WEEKDAY(ck_weekday)
+
+daynum				:= 	ANY()
+					|	DAYNUM(ck_daynum)
+
+month				:= 	ANY()
+					|	MONTH(ck_month)
+
+#(compare)
+#time_set 			:= 	TIME
+#					|	MATCH_TIME_LT, TIME
+#					|	MATCH_TIME_LT
+#					|	MATCH_TIME_AROUND
+#					|	MATCH_TIME_GT, TIME
+#					|	TIME, TIME
+#					|	MATCH_TIME_GT
+#					|	MATCH_TIME_AROUND, TIME
+
+time_set 			:= 	time, time
+					|	match_time_lt, time
+					|	match_time_around, time
+					|	match_time_gt, time
+
+time 				:= 	e
+					|	TIME(ck_time)
+
+match_time_lt 		:= 	MATCH_TIME_LT( time )
+
+match_time_around 	:= 	MATCH_TIME_AROUND( time )
+
+match_time_gt 		:= 	MATCH_TIME_GT( time )
+
+breakfast 			:= 	BREAKFAST()
+
+stops               :=  None()
+                    |   city
+
+city 				:=	CITY(ck_city)
+
+food 				:= 	MEAL()
+					|	breakfast
+

@@ -1,0 +1,254 @@
+AIRCRAFT
+input: ck_aircraft
+return: aircraft
+description: aircraft type, aircraft model.
+
+AIRLINES
+input: ck_airlines
+return:
+description: airline name.
+
+ANY
+input: null
+return: 
+description: any arguments.
+
+AtomicColSet
+input: Col
+return:
+description: 
+
+AtomicRowPred
+input: EQ_DEPARTS, EQ_ARRIVES
+return: AtomicRowPredSet
+description: A predicate for select rows
+
+AtomicRowPredSet
+input: AtomicRowPred
+return: flight
+description: The flight or plane that fulfills a set of row predicates.
+
+BETWEEN_CITIES
+input: Eq_Departs_IMP, Eq_Arrives_IMP
+output:
+description: The departure and arrival between two cities.
+
+BREAKFAST
+input: null
+return:
+description: breakfast
+
+CITY
+input: ck_city
+return: city
+description: city
+
+CLASS
+input: ck_class
+return:
+description: seat class
+
+COL_AIRCRAFT_TYPE
+input: null
+return: Col
+description: in aircraft type column
+
+COL_AIRLINES
+input: null
+return: Col
+description: in airline column
+
+COL_ARRIVAL_TIME
+input: null
+return: Col
+description: in arrival time column
+
+COL_DEPARTURE_TIME
+input: null
+return: Col
+description: in departure time column
+
+COL_FARE
+input: null
+return: Col
+description: fare, cost
+
+COL_STOPS
+input: null
+return: Col
+description: in stops column
+
+COL_TRANSPORT
+input: null
+return: Col
+description: in transportation, ground
+
+ColSet
+input: AtomicColSet
+return:
+description: colomn set
+
+DAYNUM
+input: ck_daynum
+return:
+description: day_number
+
+EQ_AIRCRAFT_TYPE
+input: AIRCRAFT
+return: Pred
+description: Compare the aircraft type.
+
+EQ_AIRLINES
+input: AIRLINES
+return: Pred
+description: Compare the airlines company name.
+
+EQ_AIRPORT
+input: CITY
+return: Pred
+description: The airport name.
+
+EQ_ARRIVES
+input: CITY, Unit_Time_Set, WEEKDAY, DAYNUM, MONTH
+return: Pred
+description: The arriving, arrive info, destination. Include the city flies to, and the time, date and month of arrival.
+
+EQ_CLASS
+input: CLASS
+return: Pred
+description: the class of the seats.
+
+EQ_DEPARTS
+input: CITY, Unit_Time_Set, WEEKDAY, DAYNUM, MONTH
+return: Pred
+description: The departure, take off, leaving, leave info. Include the city that leaves from, the weekday, day number and month of departure.
+
+EQ_FOOD
+input: BREAKFAST
+return: Pred
+description: the food
+
+EQ_NON_STOP
+input: null
+return: Pred
+description: nonstop, direct
+
+EQ_STOPS
+input: CITY
+return: Pred
+description: the stop city, stopover city
+
+EXTRACT_ROW_MAX
+input: AtomicColSet, AtomicRowPredSet
+return:flight
+description: the flight with the max highest most value
+
+EXTRACT_ROW_MAX_T
+input: COL_DEPARTURE_TIME, AtomicRowPredSet
+return: flight
+description: the latest flight, last flight
+
+EXTRACT_ROW_MIN
+input: AtomicColSet, AtomicRowPredSet
+return: flight
+description: the min value of Col
+
+EXTRACT_ROW_MIN_F
+input: COL_FARE, AtomicRowPredSet
+return: flight
+description: select the cheapest flight, lowest cost， least expensive.
+
+EXTRACT_ROW_MIN_T
+input: COL_DEPARTURE_TIME, AtomicRowPredSet
+return: flight
+description: the first flight, earliest flight
+
+Eq_Aircraft_Type_IMP
+input: AIRCRAFT
+return:
+description: the aircraft type
+
+Eq_Airlines_IMP
+input: AIRLINES
+return:
+description: The airlines company name.
+
+Eq_Airport_IMP
+input: CITY
+return:
+description: the airport city
+
+Eq_Arrives_IMP
+input: CITY, Unit_Time_Set, TIME, DAYNUM, MONTH
+return: AtomicRowPredSet
+description: 
+
+Eq_Class_IMP
+input: CLASS
+return:
+description: the class
+
+Eq_Departs_IMP
+input: CITY, Unit_Time_Set, TIME, DAYNUM, MONTH
+return:
+description: 
+
+Eq_Food_IMP
+input: MEAL
+return:
+description: the food or meal
+
+MATCH_TIME_AROUND
+input: TIME
+return: Unit_Time_Set
+description: matches time around, about, qpproximately the input
+
+MATCH_TIME_GT
+input: TIME
+return: Unit_Time_Set
+description: matches time after the input
+
+MATCH_TIME_LT
+input: TIME
+return: Unit_Time_Set
+description: matches time before the input
+
+MEAL
+input: null
+return: Eq_Food_IMP
+description: meal
+
+MONTH
+input: ck_month
+return: 
+description: month
+
+NONE
+input: null
+return: EQ_STOPS
+description: no stops, none stops
+
+PROJECT
+input: AtomicColSet, AtomicRowPredSet/EXTRACT
+return: col
+description: 
+
+ROUND_TRIP
+input: null
+return: AtomicRowPredSet
+description: round
+
+TIME
+input: ck_time
+return: Unit_Time_set
+description: time
+
+Unit_Time_Set
+input: TIME/MATCH_TIME_AROUND/MATCH_TIME_GT/MATCH_TIME_LT
+return: EQ_DEPARTS/EQ_ARRIVES
+description: Unit time set.
+
+WEEKDAY
+input: ck_weekday
+return: weekday
+description: weekday
