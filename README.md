@@ -16,10 +16,12 @@ Programming*(https://research.csc.ncsu.edu/picture/publications/papers/FSE20-HIS
 Python 3.6 or later.
 
 ## Installation and Quick Start
-To deploy HISyn on local machine, after clone this repository, you also need to download the required third party packages. 
-Please refer to instructions in [third_party_pkgs](./third_party_pkgs) to download and install all the necessary packages. 
 
-After having StanfordNLP package deployed, you need to install the stanfordnlp python library:
+First, clone this repository. 
+
+Then, install the required third party packages. Please refer to instructions in [third_party_pkgs](./third_party_pkgs) to download and install all the necessary packages. 
+
+After having StanfordNLP deployed, you need to install the stanfordnlp python library:
 
       pip install stanfordnlp
 
