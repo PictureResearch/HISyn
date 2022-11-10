@@ -1,9 +1,7 @@
-# HISyn
+# Introduction
 
-HISyn refers to "**h**uman learning **i**nspired **syn**thesizer". 
-
-HISyn is built on NL understanding-driven approach, synthesizing domain specific language code expressions by
-comparing the information in NL queries and NL API descriptions.
+HISyn refers to "**h**uman learning **i**nspired **syn**thesizer". It is a Natural Language Programming tool, which generates code based on queries written in English.
+Unlike other Natural Lanugage Programming tools, HISyn does not need training examples. For a given domain, the user just needs to provide the document of the domain's APIs and optionally some special knowledge about that domain. HISyn can then work in that new domain. It is inspired by how Humans learn programming: Instead of going through millions of coding examples, humans typically learn about the APIs of the new domain by reading the documents. HISyn takes a similar approach, learning about the new domain through NL understanding on the domain's document. 
 
 Details can be found in the paper *HISyn: Human Learning-Inspired Natural Language
 Programming*(https://research.csc.ncsu.edu/picture/publications/papers/FSE20-HISyn.pdf) published on FSE2020.
