@@ -53,12 +53,15 @@ if __name__ == '__main__':
     # set domain
     # domain = 'Flight'
     domain = 'TextEditing'
-
+    firstTime = True
     # set NL query
     # text = 'Insert colon after 1st word'
     while True:
-        text = input("Input an English sentence in the "+domain+" domain: ")
+        text = input("Input an English sentence in the "+domain+" domain (q to quit): ")
         if (text=='q'):
             break
+        if (firstTime):
+            print("Starting HISyn. (First time may take a minute.) Please wait...")
+            firstTime = False
         run_HISyn(domain, text)
     print("Thanks for using HISyn! Goodbye.")
