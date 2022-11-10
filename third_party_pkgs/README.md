@@ -3,7 +3,7 @@ This directory is used to store the third party packages used in HISyn.
 
 In V1.0, only StanfordCoreNLP is used. Please follow the following instructions to install it.  
 
-### Package instructions
+### Package install instructions
 
 - Step 1: Download StanfordCoreNLP
 
