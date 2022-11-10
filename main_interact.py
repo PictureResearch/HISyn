@@ -57,7 +57,10 @@ if __name__ == '__main__':
     # set NL query
     # text = 'Insert colon after 1st word'
     while True:
-        text = input("Input an English sentence in the "+domain+" domain (q to quit): ")
+        print("\nPlease input an English sentence in the "+domain+" domain.")
+        if (domain=='TextEditing'):
+            print("  (Example: Insert a colon after the 1st word in every sentence.)")
+        text = input("  Input (q to quit): ")
         if (text=='q'):
             break
         if (firstTime):
