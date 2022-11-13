@@ -75,8 +75,6 @@ You may just follow either of the suggested workarounds to resolve the issue.
 
 By foregoing the need for training samples, HISyn features easy domain extensibility. Users can enable NL programming with HISyn in a new domain by providing it with a *structued API documentation* and a *grammar* of the domain. 
 
-### Formats
-
 ### For domains with an available grammar 
 
 In this case, the user would need to create the *structured API documentation*. Manual conversion from a raw documentation to a *structured API documentation* can be time-consuming. So when there are many APIs in a domain, the users are recommended to create a script to do that. Some existing parsing tools (e.g., BeautifulSoup for HTML) may come in handy. 
@@ -87,15 +85,14 @@ In this case, the user would need to create the *structured API documentation*. 
 
     ```
     the name of the API.
-    input: the inputs/arguments of this API.
-    return: the return type of this API. 
+    input: the list of arguments of this API, separated by ",".
+    return: the return data type of this API. 
     description: the natural language description of this API.
     ``` 
 
-    *Example*
+*Example*
 
-    Below is an example of one API entry in the `flight` domain. The full example of the `structured API documentation`
-can be found in the [flight domain folder](./Documentation/Flight/API_documents.txt).
+Below is an example of one API entry in the `flight` domain. The full example of the `structured API documentation` can be found in the [flight domain folder](./Documentation/Flight/API_documents.txt).
 
     ```
     EXTRACT_ROW_MAX
@@ -107,7 +104,7 @@ can be found in the [flight domain folder](./Documentation/Flight/API_documents.
 
 #### Format of the grammar
 
-  The grammar should be in the form of a context-free grammar written in Backus-Naur form (BNF). Please refer to the `grammar.txt` of each domain in [Document folder](./Documentation/) for examples.
+The grammar should be written in the form of a context-free grammar written in Backus-Naur form (BNF). Please refer to the [grammar.txt](./Documentation/Flight/grammar.txt) in the Flight domain as an example. More domains are in the [Documentation](./Documentation) folder.
 
 
 When both the documentation and grammar of the new domain (`new_domain`) are in HISyn's required formats, the user just needs to create a new directory, named after the domain name, in ./Document folder, and put there the documents `API_documents.txt` (for the documentation) and `grammar.txt` (for the grammar). HISyn can then support NL programming in `new_domain`. The user may try it by changing `domain` to this new domain in the `main` function of `./main_interact.py`.  
@@ -131,15 +128,11 @@ To make HISyn generate accurate results, the following extra steps are suggested
     HISyn relies on the name entity tags to identify the arguments inside the NL query. For example, to generate code for a query in the flight domain, `I would like to travel to Dallas from Philadelphia`, 
     HISyn needs to know that `Dallas` and `Philadelphia` are two cities rather than some kind of keywords that need to be mapped to some APIs. 
     
-    Although the NLP tool used by XGen provides name entity recognition, it is not precise enough for some domains. Thus we can create our own domain annotations to help HISyn recognize such arguments. Please see `def domain_annotator(self, domain)` function in `./front_end/NLP.py` for the form of the annotation. Such annotations are stored in the `NER` field (for name entity recognition) of the NLP class in XGen. Before adding annotations for a new domain, the users are suggested to check the annotations in the domains already covered by XGen to learn how to add annotations for a domain. 
+    Although the NLP tool used by XGen provides name entity recognition, it is not precise enough for some domains. Thus we can create our own domain annotations to help HISyn recognize such arguments. To do that, the user would need to modify the function `domain_annotator(self, domain)` in [NLP.py](./front_end/NLP.py). This function assigns a certain `NER` (which stands for *name entity recognition*) tag to each special name that may appear in users' queries. For instance, it assigns "CITY" as the NER tag to a list of city names in the Flight domain. Users may follow the existing content of the function to add new domains and the annotations in the new domains by modifying the function.
     
-2. Link the name entity to argument terminals in the grammar.
+2. Link the NER tags in NLP.py with the corresponding tokens in the grammar.
     
-    HISyn generates code expression based on the grammar of the domain. Thus, for the annotated entities, HISyn needs to know which arguments of the API they are corresponding to.
-    
-    The corresponding relations are stored in `./common_knowledge/NLPCommonKnowledge.py`, line 58, as a dictionary.
-    
-    The key of each item is the `NER` tag of the argument, and the value is the argument terminal inside the grammar.
+    HISyn generates code expression based on the grammar of the domain. Thus, for the NER tags to be used in the code generation process, it is necessary to link the NER tags with the corresponding tokens in the grammar file. For instance, in the Flight domain, the NER tag "AIRLINES" maps to token "ck_airlines" in the [grammar](./Documentation/Flight/grammar.txt) file. To create such a link, the user needs to add the mapping into the `common_knowledge_tags` dictionary in file [NLPCommonKnowledge](./common_knowledge/NLPCommonKnowledge.py). The key in each entry is the NER tag, and the value is the token in the grammar.
 
 ## Reference
 

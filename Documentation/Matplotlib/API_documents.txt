@@ -1,0 +1,4 @@
+plot
+input: x-pos, y-pos, plot-format
+return:  
+description: plot lines between the positions defined by x-pos and y-pos. plot-format defines the format of the lines, such as color, markers. 

@@ -1267,17 +1267,20 @@ def combine_cgt(root_cgt_group, gg):
 
         import time
         start_time = time.time()
-        cgt1 = copy.deepcopy(tree_set[0])
-        for i in range(1, len(tree_set)):
-            # log.test('combine start ...')
-            cgt2 = copy.deepcopy(tree_set[i])
-            # cgt1.display()
-            # cgt2.display()
-            combine_trees(cgt1.root, cgt2)
-        # log.test('combine_cgt_time: ', time.time() - start_time)
+        is_gram_correct = False
+        cgt1 = []
+        if tree_set:
+            cgt1 = copy.deepcopy(tree_set[0])
+            for i in range(1, len(tree_set)):
+                # log.test('combine start ...')
+                cgt2 = copy.deepcopy(tree_set[i])
+                # cgt1.display()
+                # cgt2.display()
+                combine_trees(cgt1.root, cgt2)
+            # log.test('combine_cgt_time: ', time.time() - start_time)
 
-        exe_count += 1
-        is_gram_correct = cgt1.check_cgt_grammar(gg)
+            exe_count += 1
+            is_gram_correct = cgt1.check_cgt_grammar(gg)
         if not is_gram_correct:
             continue
         # else:
@@ -1285,22 +1288,23 @@ def combine_cgt(root_cgt_group, gg):
         #     cgt1.display()
         #     log.lprint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
 
+        if cgt1:
         # count api in tree_set[0]
-        cgt1.set_api_list(cgt1.root, gg)
+            cgt1.set_api_list(cgt1.root, gg)
 
-        if cgt1.api_count < min_api_count:
-            min_api_count = cgt1.api_count
-            min_tree.clear()
-            min_tree.append(cgt1)
-            min_index = root_cgt_group.index(tree_set)
+            if cgt1.api_count < min_api_count:
+                min_api_count = cgt1.api_count
+                min_tree.clear()
+                min_tree.append(cgt1)
+                min_index = root_cgt_group.index(tree_set)
 
-        elif cgt1.api_count == min_api_count:
-            min_tree.append(cgt1)
-            min_index = root_cgt_group.index(tree_set)
+            elif cgt1.api_count == min_api_count:
+                min_tree.append(cgt1)
+                min_index = root_cgt_group.index(tree_set)
 
-        if cgt1.api_count == 0:
-            log.test(cgt1)
-            break
+            if cgt1.api_count == 0:
+                log.test(cgt1)
+                break
 
     # display_min_tree(min_tree, min_index, exe_count)
     return min_tree

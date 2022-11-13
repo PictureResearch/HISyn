@@ -52,7 +52,8 @@ def run_HISyn(domain, text='', index = 0):
 if __name__ == '__main__':
     # set domain
     # domain = 'Flight'
-    domain = 'TextEditing'
+    # domain = 'TextEditing'
+    domain = 'Matplotlib'
     firstTime = True
     # set NL query
     # text = 'Insert colon after 1st word'

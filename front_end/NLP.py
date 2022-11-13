@@ -127,6 +127,9 @@ class NLParsing:
         # self.dependency = self.sentence.enhancedPlusPlusDependencies
 
     def domain_annotator(self, domain):
+        """
+        Assign NER (name entity recognition) tags to special names that may appear in users' queries. 
+        """
         if domain == 'Flight':
             weekday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
             airlines = ['continental', 'american', 'american', 'twa', 'united', 'delta', 'eastern', 'us']
@@ -183,6 +186,18 @@ class NLParsing:
                 elif self.sentence.token[t].word in unary:
                     self.sentence.token[t].ner = 'UNARY'
 
+        elif domain == 'Matplotlib':
+            xpositions = ['1', '2']
+            ypositions = ['3', '4']
+            plotformats = ['bo','b+','ro','r+','go','g+']
+
+            for t in range(len(self.sentence.token)):
+                if self.sentence.token[t].word in xpositions:
+                    self.sentence.token[t].ner = 'xpos'
+                elif self.sentence.token[t].word in ypositions:
+                    self.sentence.token[t].ner = 'ypos'
+                elif self.sentence.token[t].word in plotformats:
+                    self.sentence.token[t].ner = 'plotformat'
 
 
     def displayNode(self, index, n):

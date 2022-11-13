@@ -68,4 +68,7 @@ common_knowledge_tags = {
     'INTEGER': 'ck_integer',
     'ORDINAL': 'ck_integer',
     'NUMBER': 'doubleValue',
+    'xpos': 'x-pos',
+    'ypos': 'y-pos',
+    'plotformat': 'plot-format'
 }

@@ -1,4 +1,4 @@
-# todo: figure out the meaning of _imp
+# The grammar of the flight domain 
 
 query				:=	project
 					|	atomic_row_pred_set
