@@ -1,0 +1,5 @@
+#ner:type=[words]
+
+string:ck_string=[colon,space,dollar,name]
+integer:ck_integer=[1st,2nd,3rd,4th,5th,6th,7th,8th,9th,10th13th,80th,1,2,3,4,5,6,7,8,9,10,14,52]
+ordinal:ck_integer=[first]

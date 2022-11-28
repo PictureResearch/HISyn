@@ -134,75 +134,61 @@ class NLParsing:
         """
         Assign NER (name entity recognition) tags to special names that may appear in users' queries. 
         """
-        if domain == 'Flight':
-            log.log('Loading domain NER from domain knowledge')
 
-            ner_dict = {}
+        log.log('Loading domain NER from domain knowledge')
 
-            # load from domain defined name entity: HISyn/domain_knowledge/[domain]/name_entity.txt
+        ner_dict = {}
+
+        # load from domain defined name entity: HISyn/domain_knowledge/[domain]/name_entity.txt
+        try:
             ner_file = open(f'{root_dir}/domain_knowledge/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
+        except FileNotFoundError:
+            log.log('caution: domain defined name entity file not found')
+            ner_file = []
 
+        try:
             # load from user defined name entity: HISyn/Documentation/[domain]/name_entity.txt
             ner_user_file = open(f'{root_dir}/Documentation/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
+        except FileNotFoundError:
+            log.log('caution: user defined name entity file not found')
+            ner_user_file = []
 
-            ner_lines = ner_file + ner_user_file
-            for line in ner_lines:
-                if '=' in line and '#' not in line:
-                    l = line.replace(' ', '').split('=')
-                    ner = l[0].split(':')[0]
-                    self.ner_mapping_dict[ner.lower()] = l[0].split(':')[1].lower()
-                    words = l[1].replace('[', '').replace(']', '').replace('\n', '').split(',')
-                    for w in words:
-                        if w.lower() in ner_dict:
-                            log.err('duplicated NER, overwriting:', f'{w}: {ner_dict[w.lower()]} -> {ner.lower()}' )
-                        ner_dict[w.lower()] = ner.lower()
+        ner_lines = ner_file + ner_user_file
+        for line in ner_lines:
+            if '=' in line and '#' not in line:
+                l = line.replace(' ', '').split('=')
+                ner = l[0].split(':')[0]
+                self.ner_mapping_dict[ner.lower()] = l[0].split(':')[1].lower()
+                words = l[1].replace('[', '').replace(']', '').replace('\n', '').split(',')
+                for w in words:
+                    if w.lower() in ner_dict:
+                        log.err('duplicated NER, overwriting:', f'{w}: {ner_dict[w.lower()]} -> {ner.lower()}' )
+                    ner_dict[w.lower()] = ner.lower()
 
 
-            for t in range(len(self.sentence.token)):
-                token = self.sentence.token[t].word.lower()
-                if token in ner_dict:
-                    self.sentence.token[t].ner = ner_dict[token]
+        for t in range(len(self.sentence.token)):
+            token = self.sentence.token[t].word.lower()
+            if token in ner_dict:
+                self.sentence.token[t].ner = ner_dict[token]
 
-            print(self.ner_mapping_dict)
+        print(self.ner_mapping_dict)
 
-            log.log('Finish domain specific NER')
+        log.log('Finish domain specific NER')
 
-        elif domain == 'TextEditing':
-            string = ['colon', 'space', 'dollar', 'name']
-            integer = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th' '13th', '80th', '1', '2', '3', '4',
-                       '5', '6', '7', '8', '9', '10', '14','52']
-            general_ordi = ['first']
 
-            for t in range(len(self.sentence.token)):
-                if self.sentence.token[t].word in string:
-                    self.sentence.token[t].ner = 'STRING'
-                elif self.sentence.token[t].word in integer:
-                    self.sentence.token[t].ner = 'INTEGER'
-                elif self.sentence.token[t].word in general_ordi:
-                    self.sentence.token[t].ner = 'GENERAL'
 
-        elif domain == 'ASTMatcher':
-            string = ['pi', '*']
-            unary = []
-
-            for t in range(len(self.sentence.token)):
-                if self.sentence.token[t].word in string:
-                    self.sentence.token[t].ner = 'STRING'
-                elif self.sentence.token[t].word in unary:
-                    self.sentence.token[t].ner = 'UNARY'
-
-        elif domain == 'Matplotlib':
-            xpositions = ['1', '2']
-            ypositions = ['3', '4']
-            plotformats = ['bo','b+','ro','r+','go','g+']
-
-            for t in range(len(self.sentence.token)):
-                if self.sentence.token[t].word in xpositions:
-                    self.sentence.token[t].ner = 'xpos'
-                elif self.sentence.token[t].word in ypositions:
-                    self.sentence.token[t].ner = 'ypos'
-                elif self.sentence.token[t].word in plotformats:
-                    self.sentence.token[t].ner = 'plotformat'
+        # elif domain == 'Matplotlib':
+        #     xpositions = ['1', '2']
+        #     ypositions = ['3', '4']
+        #     plotformats = ['bo','b+','ro','r+','go','g+']
+        #
+        #     for t in range(len(self.sentence.token)):
+        #         if self.sentence.token[t].word in xpositions:
+        #             self.sentence.token[t].ner = 'xpos'
+        #         elif self.sentence.token[t].word in ypositions:
+        #             self.sentence.token[t].ner = 'ypos'
+        #         elif self.sentence.token[t].word in plotformats:
+        #             self.sentence.token[t].ner = 'plotformat'
 
 
     def displayNode(self, index, n):

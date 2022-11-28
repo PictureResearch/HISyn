@@ -55,18 +55,9 @@ preposition = [
     'above'
 ]
 
+
+# NER: types in grammar
 common_knowledge_tags = {
-    'CITY': 'ck_city',
-    'WEEKDAY': 'ck_weekday',
-    'AIRLINES': 'ck_airlines',
-    'CLASS': 'ck_class',
-    'MONTH': 'ck_month',
-    'AIRCRAFT': 'ck_aircraft',
-    'DAYNUM': 'ck_daynum',
-    'TIME': 'ck_time',
-    'STRING': 'ck_string',
-    'INTEGER': 'ck_integer',
-    'ORDINAL': 'ck_integer',
     'NUMBER': 'doubleValue',
     'xpos': 'x-pos',
     'ypos': 'y-pos',

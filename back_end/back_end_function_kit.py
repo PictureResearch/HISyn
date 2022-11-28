@@ -11,7 +11,7 @@ import copy
 
 # check if a word is part of common knowledge, if yes, mapping with API input
 def ner_mapping_checking(gg, token, ner_mapping_dict):
-    log.log('checking common knowledge: ', token.word, token.ner)
+    log.test('checking common knowledge: ', token.word, token.ner)
     print(ner_mapping_dict)
     target = token
     if target.ner in ner_mapping_dict:
@@ -29,7 +29,7 @@ def ner_mapping_checking(gg, token, ner_mapping_dict):
 
 # mapping the input type with the name entity to map the API that take common knowledge as input
 def mapping_input(gg, input_type, ner_mapping_dict):
-    log.log('mapping input: ',  input_type)
+    log.test('mapping input: ',  input_type)
     result = []
     for k in gg.api_dict.keys():
         log.test(ner_mapping_dict[input_type], gg.api_dict[k].input)
