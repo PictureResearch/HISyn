@@ -1,0 +1,3 @@
+# NER : type = [words]
+
+Time : ck_time = [evening,8,morning,2pm]

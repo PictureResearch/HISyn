@@ -38,12 +38,12 @@ def domain_specfic_parsing_rules(domain, nlp, gg):
 
 
 # prune edges based on dependency relations, pos tags
-def prune_edges(nlp, prunable_dep_tags, prunable_pos_tags, common_knowledge_tags):
+def prune_edges(nlp, prunable_dep_tags, prunable_pos_tags):
     log.log('Pruning unimportant edges...')
     dep_remove_list = []
     for d in nlp.dependency:
         if d.dep in prunable_dep_tags \
-                or (nlp.token[d.target].pos in prunable_pos_tags and (nlp.token[d.target].ner not in common_knowledge_tags and not d.dep == 'neg')) \
+                or (nlp.token[d.target].pos in prunable_pos_tags and (nlp.token[d.target].ner not in nlp.ner_mapping_dict and not d.dep == 'neg')) \
                 or nlp.token[d.target].ner == 'REMOVE':
             log.test("remove dep: " + d.dep)
             log.test("target token: " + nlp.token[d.target].word)

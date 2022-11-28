@@ -10,6 +10,8 @@ import os
 import HISyn.tools.Log as log
 from HISyn.tools.root_directory import root_dir
 from HISyn.tools.system_operations import check_sys_proc_exists_by_name
+from HISyn.tools.root_directory import root_dir
+
 
 # annotator_list = ['tokenize', 'ssplit', 'pos', 'lemma', 'ner', 'parse', 'depparse']
 # client = CoreNLPClient(annotators=annotator_list, timeout=60000, memory='8G')
@@ -62,9 +64,11 @@ class NLParsing:
         self.dependency = []
         self.root = None
         self.modifier_group = []
+        self.ner_mapping_dict = {}
         self.start_server = not nlp_server
         if nlp_server:
-            self.check_nlp_server()
+            if self.check_nlp_server():
+                self.start_server = True
 
 
     def check_nlp_server(self):
@@ -131,36 +135,37 @@ class NLParsing:
         Assign NER (name entity recognition) tags to special names that may appear in users' queries. 
         """
         if domain == 'Flight':
-            weekday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-            airlines = ['continental', 'american', 'american', 'twa', 'united', 'delta', 'eastern', 'us']
-            seat_class = ['coach', 'first', 'economy']
-            city = ["washington", "atlanta","philadelphia","dallas","francisco","boston","baltimore","denver","worth","pittsburgh","detroit",
-                    "westchester","oakland","stapleton","tacoma","jose"]
-            month = ["september","august","november","june","july","october","april","may"]
-            aircraft = ["819","727","320","813","2153","dc10","296","747","825","269","1039","257","315","459","jet"]
-            daynum = ["first","twentieth","nineteenth","seventeenth","ninth","third","fourteenth","seventh",
-                      "fifteenth","thirtieth","fourth","fifth","eighth","twelfth","sixteenth","second","tenth","eleventh"]
-            time = ["evening","8","morning","10am","10","noontime","day","9","225pm","afternoon","230","324pm","110pm",
-                    "12","5","645am","755am","755","9pm","8am","815am","1pm","420","615pm","night","630am","650","555","6pm","nighttime","tomorrow","7pm","today","2pm"]
+            log.log('Loading domain NER from domain knowledge')
+
+            ner_dict = {}
+
+            # load from domain defined name entity: HISyn/domain_knowledge/[domain]/name_entity.txt
+            ner_file = open(f'{root_dir}/domain_knowledge/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
+
+            # load from user defined name entity: HISyn/Documentation/[domain]/name_entity.txt
+            ner_user_file = open(f'{root_dir}/Documentation/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
+
+            ner_lines = ner_file + ner_user_file
+            for line in ner_lines:
+                if '=' in line and '#' not in line:
+                    l = line.replace(' ', '').split('=')
+                    ner = l[0].split(':')[0]
+                    self.ner_mapping_dict[ner.lower()] = l[0].split(':')[1].lower()
+                    words = l[1].replace('[', '').replace(']', '').replace('\n', '').split(',')
+                    for w in words:
+                        if w.lower() in ner_dict:
+                            log.err('duplicated NER, overwriting:', f'{w}: {ner_dict[w.lower()]} -> {ner.lower()}' )
+                        ner_dict[w.lower()] = ner.lower()
+
 
             for t in range(len(self.sentence.token)):
-                # log.test(self.sentence.token[t].word)
-                if self.sentence.token[t].word in weekday:
-                    self.sentence.token[t].ner = 'WEEKDAY'
-                elif self.sentence.token[t].word in airlines:
-                    self.sentence.token[t].ner = 'AIRLINES'
-                elif self.sentence.token[t].word in seat_class:
-                    self.sentence.token[t].ner = 'CLASS'
-                elif self.sentence.token[t].word.lower() in city:
-                    self.sentence.token[t].ner = 'CITY'
-                elif self.sentence.token[t].word in month:
-                    self.sentence.token[t].ner = 'MONTH'
-                elif self.sentence.token[t].word in aircraft:
-                    self.sentence.token[t].ner = 'AIRCRAFT'
-                elif self.sentence.token[t].word in daynum:
-                    self.sentence.token[t].ner = 'DAYNUM'
-                elif self.sentence.token[t].word in time:
-                    self.sentence.token[t].ner = 'TIME'
+                token = self.sentence.token[t].word.lower()
+                if token in ner_dict:
+                    self.sentence.token[t].ner = ner_dict[token]
+
+            print(self.ner_mapping_dict)
+
+            log.log('Finish domain specific NER')
 
         elif domain == 'TextEditing':
             string = ['colon', 'space', 'dollar', 'name']
@@ -243,4 +248,3 @@ class NLParsing:
                   '[' + self.sentence.token[e.target - 1].coarseNER + ',' + self.sentence.token[
                       e.target - 1].fineGrainedNER + ']',
                   '[' + self.sentence.token[e.target - 1].lemma + ']')
-

@@ -20,13 +20,13 @@ def run_HISyn(domain, text='', index = 0, nlp_server=False):
     front_kit.domain_specfic_parsing_rules(domain, nlp, gg)
 
     import HISyn.common_knowledge.NLPCommonKnowledge as nlpck
-    front_kit.prune_edges(nlp, nlpck.prunable_dep_tags, nlpck.prunable_pos_tags, nlpck.common_knowledge_tags)
+    front_kit.prune_edges(nlp, nlpck.prunable_dep_tags, nlpck.prunable_pos_tags)
 
     nlp.displayByEdge()
 
     import HISyn.back_end.back_end_function_kit as back_kit
 
-    back_kit.semantic_mapping(domain, gg, nlp, nlpck.common_knowledge_tags)
+    back_kit.semantic_mapping(domain, gg, nlp)
 
     nlp.displayByEdge()
 
@@ -51,12 +51,12 @@ def run_HISyn(domain, text='', index = 0, nlp_server=False):
 
 if __name__ == '__main__':
     # set domain
-    # domain = 'Flight'
-    domain = 'TextEditing'
+    domain = 'Flight'
+    # domain = 'TextEditing'
 
     # set NLP server
-    # nlp_server = True   # dependent server launched in separately, see README - Hint
-    nlp_server = False
+    nlp_server = True   # dependent server launched in separately, see README - Hint
+    # nlp_server = False
 
     # set NL query text
     # text = 'Insert colon after 1st word'
