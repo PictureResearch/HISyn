@@ -139,23 +139,24 @@ class NLParsing:
 
         ner_dict = {}
 
-        # load from domain defined name entity: HISyn/domain_knowledge/[domain]/name_entity.txt
-        try:
-            ner_file = open(f'{root_dir}/domain_knowledge/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
-        except FileNotFoundError:
-            log.log('caution: domain defined name entity file not found')
-            ner_file = []
+        # # load from domain defined name entity: HISyn/domain_knowledge/[domain]/name_entity.txt
+        # try:
+        #     ner_file = open(f'{root_dir}/domain_knowledge/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
+        # except FileNotFoundError:
+        #     log.log('caution: domain defined name entity file not found')
+        #     ner_file = []
 
         try:
-            # load from user defined name entity: HISyn/Documentation/[domain]/name_entity.txt
+            # load from name entity document: HISyn/Documentation/[domain]/name_entity.txt
             ner_user_file = open(f'{root_dir}/Documentation/{domain}/name_entity.txt', 'r', encoding='utf-8').readlines()
         except FileNotFoundError:
             log.log('caution: user defined name entity file not found')
             ner_user_file = []
 
-        ner_lines = ner_file + ner_user_file
+        ner_lines = ner_user_file
+        # ner_lines = ner_file + ner_user_file
         for line in ner_lines:
-            if '=' in line and '#' not in line:
+            if '=' in line and line[0] != '#':
                 l = line.replace(' ', '').split('=')
                 ner = l[0].split(':')[0]
                 self.ner_mapping_dict[ner.lower()] = l[0].split(':')[1].lower()
@@ -170,8 +171,6 @@ class NLParsing:
             token = self.sentence.token[t].word.lower()
             if token in ner_dict:
                 self.sentence.token[t].ner = ner_dict[token]
-
-        print(self.ner_mapping_dict)
 
         log.log('Finish domain specific NER')
 

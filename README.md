@@ -121,18 +121,30 @@ These domains usually do not have their own grammar readily available. In this c
 
 ### A few more steps
 
-To make HISyn generate accurate results, the following extra steps are suggested to provide XGen with some domain-specific knowledge.
+To make HISyn generate accurate results, the following extra materials are suggested to provide XGen with some domain-specific knowledge.
 
 1. Add domain name entity annotations.
 
     HISyn relies on the name entity tags to identify the arguments inside the NL query. For example, to generate code for a query in the flight domain, `I would like to travel to Dallas from Philadelphia`, 
     HISyn needs to know that `Dallas` and `Philadelphia` are two cities rather than some kind of keywords that need to be mapped to some APIs. 
     
-    Although the NLP tool used by XGen provides name entity recognition, it is not precise enough for some domains. Thus we can create our own domain annotations to help HISyn recognize such arguments. To do that, the user would need to modify the function `domain_annotator(self, domain)` in [NLP.py](./front_end/NLP.py). This function assigns a certain `NER` (which stands for *name entity recognition*) tag to each special name that may appear in users' queries. For instance, it assigns "CITY" as the NER tag to a list of city names in the Flight domain. Users may follow the existing content of the function to add new domains and the annotations in the new domains by modifying the function.
+    Although the NLP tool used by XGen provides name entity recognition, it is not precise enough for some domains. Thus we can create our own domain annotations to help HISyn recognize such arguments. 
+        
+2. Link the domain-specific `NER` (which stands for *name entity recognition*) tags with the corresponding tokens in the grammar.
     
-2. Link the NER tags in NLP.py with the corresponding tokens in the grammar.
+    HISyn generates code expression based on the grammar of the domain. Thus, for the NER tags to be used in the code generation process, it is necessary to link the NER tags with the corresponding tokens in the grammar file. For instance, in the Flight domain, the NER tag "AIRLINES" maps to token "ck_airlines" in the [grammar](./Documentation/Flight/grammar.txt) file. 
     
-    HISyn generates code expression based on the grammar of the domain. Thus, for the NER tags to be used in the code generation process, it is necessary to link the NER tags with the corresponding tokens in the grammar file. For instance, in the Flight domain, the NER tag "AIRLINES" maps to token "ck_airlines" in the [grammar](./Documentation/Flight/grammar.txt) file. To create such a link, the user needs to add the mapping into the `common_knowledge_tags` dictionary in file [NLPCommonKnowledge](./common_knowledge/NLPCommonKnowledge.py). The key in each entry is the NER tag, and the value is the token in the grammar.
+To provide such materials, the user would need to provide a text file named _name_entity.txt_ under [Documentation/\[domain\]](./Documentation) folder, e.g., see [name_entity.txt](./Documentation/Flight/name_entity.txt) in Flight domain. Inside the test file, each line represent one name entity with its corresponding grammar token and a list of words belongs to this name entity. The formats of each line should follow the synthax below:
+
+```
+# name entity file syntax
+NER_tag : grammar_token = [list of words]
+# e.g., city in Flight domain
+city : ck_city = [washington, atlanta, philadelphia,dallas, ...] 
+```
+
+This syntax first link the domain-specific NER tags with correspoding grammar tokens (`NER_tag : grammar_token`). Then the special name entities that may appear in users' queries are assigned to the NER tags (`= [list of words]`). For instance, in the Flight domain, it linkes grammar token `ck_city` to the NER tag  `city`, and assign a list of city names (e.g., `[washington, atlanta, philadelphia,dallas, ...]`) to it. Users may refer to the _name_entity.txt_ file in existing domains to add the name entify file in the new domains. 
+
 
 ## Reference
 
