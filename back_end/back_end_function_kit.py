@@ -10,11 +10,12 @@ import copy
 ############### funcitons for Semantic mapping ######################
 
 # check if a word is part of common knowledge, if yes, mapping with API input
-def common_knowledge_checking(gg, token, common_knowledge_tags):
-    log.test('checking common knowledge: ', token.word)
+def ner_mapping_checking(gg, token, ner_mapping_dict):
+    log.test('checking common knowledge: ', token.word, token.ner)
+    print(ner_mapping_dict)
     target = token
-    if target.ner in common_knowledge_tags:
-        api = mapping_input(gg, target.ner, common_knowledge_tags)
+    if target.ner in ner_mapping_dict:
+        api = mapping_input(gg, target.ner, ner_mapping_dict)
         target.mapping = list(api)
         # print(api)
         for i in range(len(api)):
@@ -27,12 +28,12 @@ def common_knowledge_checking(gg, token, common_knowledge_tags):
 
 
 # mapping the input type with the name entity to map the API that take common knowledge as input
-def mapping_input(gg, input_type, common_knowledge_tags):
+def mapping_input(gg, input_type, ner_mapping_dict):
     log.test('mapping input: ',  input_type)
     result = []
     for k in gg.api_dict.keys():
-        log.test(common_knowledge_tags[input_type], gg.api_dict[k].input)
-        if common_knowledge_tags[input_type] == gg.api_dict[k].input:
+        log.test(ner_mapping_dict[input_type], gg.api_dict[k].input)
+        if ner_mapping_dict[input_type] == gg.api_dict[k].input:
             result.append(k)
     return result
 
@@ -66,11 +67,11 @@ def mapping_word_in_description(gg, token):
 
 
 # mapping common knowledge inside sentence
-def common_knowledge_mapping(gg, nlp, common_knowledge_tags):
+def ner_mapping_mapping(gg, nlp):
     log.log('checking common knowledge')
     for d in nlp.dependency:
-        common_knowledge_checking(gg, nlp.token[d.source], common_knowledge_tags)
-        common_knowledge_checking(gg, nlp.token[d.target], common_knowledge_tags)
+        ner_mapping_checking(gg, nlp.token[d.source], nlp.ner_mapping_dict)
+        ner_mapping_checking(gg, nlp.token[d.target], nlp.ner_mapping_dict)
     log.log('common knowledge replace finished')
 
 
@@ -677,7 +678,7 @@ def set_all_api_path(nlp, gg):
 
 
 # replace common knowledge API with API(ck_arguments)
-def replace_common_knowledge_API(nlp):
+def replace_ner_mapping_API(nlp):
     log.log('replace common knowledge api...')
     for d in nlp.dependency:
         if nlp.token[d.target].ner == 'translated':
@@ -1569,8 +1570,8 @@ def convert_to_expression(final_CG_tree_list, gg):
 
 
 # Overall semantic mapping function
-def semantic_mapping(domain, gg, nlp, common_knowledge_tags):
-    common_knowledge_mapping(gg, nlp, common_knowledge_tags)
+def semantic_mapping(domain, gg, nlp):
+    ner_mapping_mapping(gg, nlp)
     mapping_keywords(gg, nlp)
     domain_specific_mapping_rules(domain, nlp)
     remove_empty_edge(nlp)
@@ -1624,7 +1625,7 @@ def reversed_all_path_searching(domain, nlp, gg, dependent_dict):
     # replace common knowledge API with API(ck_argument)
     # Purpose: these APIs become distinguished to each other and
     #  won't be combined in later steps
-    replace_common_knowledge_API(nlp)
+    replace_ner_mapping_API(nlp)
     # nlp.displayByEdge()
 
 

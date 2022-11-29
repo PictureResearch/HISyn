@@ -17,7 +17,7 @@ def log(text1, text2 = '', text3 = '', text4 = '', text5 = ''):
 
 
 def err(text1, text2 = '', text3 = '', text4 = '', text5 = ''):
-    print("** Error:", text1, text2, text3, text4, text5, '\n')
+    print("** warning:", text1, text2, text3, text4, text5, '\n')
     pass
 
 
