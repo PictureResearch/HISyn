@@ -1,6 +1,3 @@
-import sys
-sys.path.insert(0, '../../..')
-
 import HISyn.tools.Log as log
 from HISyn.tools.root_directory import root_dir
 
@@ -272,7 +269,7 @@ class GrammarGenerator:
         file.write(text)
         file.close()
 
-    def generate_grammar(self, domain, doc_file, grammar_file='grammar.txt'):
+    def generate_grammar(self, domain, doc_file, grammar_file='grammar-gen.txt'):
         self.read_doc(doc_file)
         self.pre_process()
         self.set_api()
@@ -289,4 +286,4 @@ class GrammarGenerator:
             text += self.api_dict[k].name + '\n'
             text += 'input: ' + ', '.join(self.api_dict[k].arg) + '\nreturn:\ndescription:'
             text += self.api_dict[k].desc + '\n\n'
-        self.write_to_file(domain, file_name='API_documents.txt', text=text)
+        self.write_to_file(domain, file_name='detailed_API_documents.txt', text=text)
