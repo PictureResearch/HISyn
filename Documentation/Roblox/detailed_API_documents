@@ -1,0 +1,99 @@
+Dies
+input: ck_character
+return:
+description: Sets the player's health to 0
+
+Teleport
+input: ck_character
+return:
+description: Teleports the player to a location
+
+SetOnFire
+input: ck_character
+return:
+description: Sets the player on fire
+
+MoveBackAndForth
+input: ck_character
+return:
+description: Moves a part back and forth
+
+Explode
+input: ck_character
+return:
+description: The part explodes
+
+SprintWith
+input: ck_character
+return:
+description: The player can sprint with Shift
+
+DoubleJump
+input: ck_character
+return:
+description: The player can double jump
+
+ButtonTeleport
+input: ck_character
+return:
+description: The button teleports the player
+
+Coin
+input:
+return:
+description: Makes a coin that the player can pick up
+
+Victory
+input: ck_character
+return:
+description: Gives victory when the player touches it
+
+Light
+input: ck_character
+return:
+description: The part gives off light
+
+Spin
+input: _Dies
+return:
+description: Creates a spinning part that kills the player
+
+JumpBoost
+input: ck_character
+return:
+description: Allows the player to jump higher
+
+SpeedBoost
+input: ck_character
+return:
+description: Allows the player to run faster
+
+Spawn
+input: ck_character
+return:
+description: Creates other parts when touched
+
+Dissappear
+input: ck_character
+return:
+description: The part dissappears when touched
+
+MoveUp
+input: ck_integer
+return:
+description: Part moves up x amount when touched
+
+CreateWeapon
+input: ck_integer
+return:
+description: Creates a weapon with x amount of damage
+
+CreateLaserGun
+input: ck_integer
+return:
+description: Creates a Laser Gun with x amount of damage
+
+CreateEnemies
+input: ck_integer
+return:
+description: Spawns x number of enemies
