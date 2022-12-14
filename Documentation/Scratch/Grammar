@@ -1,0 +1,45 @@
+_root	:=	_rotate
+        |   _move
+        |   _rotateTime
+        |   _moveTime
+        |   _broadcast
+        |   _if
+        |   _glide
+
+_glide := Glide(_sprite, _time, _x, _y)
+
+_x := x(_int)
+
+_y := y(_int)
+
+_rotate := rotate(_sprite,_degrees)
+
+#_rotate2 := rotate(_sprite,_degrees, position)
+
+_move	:=	move(_sprite,_steps)
+
+_rotateTime := rotateTime(_sprite, _degrees, _time)
+
+_moveTime := rotateTime(_sprite, _steps, _time)
+
+_broadcast := broadcast(_statement)
+
+_if := if(_statement)
+
+_statement := statement(ck_string)
+
+_sprite :=  sprite(_character)
+
+_steps  := steps(_int)
+
+_degrees  := degrees(_int)
+
+_time  := time(_int)
+
+_character :=  ck_character
+
+_int := ck_integer
+
+
+
+#Move(sprite('cat'), steps(5))
