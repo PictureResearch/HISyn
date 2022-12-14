@@ -11,7 +11,7 @@ def run_HISyn(domain, text='', index = 0):
 
     # Build grammar graph
     import HISyn.domain_knowledge.DomainKnowledgeConstructor as dkc
-    gg = dkc.set_grammar_graph(domain, root_dir + '/Documentation/' + domain + '/grammar.txt', root_dir + '/Documentation/' + domain + '/API_documents.txt', reload = True)
+    gg = dkc.set_grammar_graph(domain, root_dir + '/Documentation/' + domain + '/grammar.txt', root_dir + '/Documentation/' + domain + '/detailed_API_documents.txt', reload = True)
 
     # parsing the query and prune the unimportant edges.
     # NLP
@@ -52,20 +52,14 @@ def run_HISyn(domain, text='', index = 0):
 if __name__ == '__main__':
     # set domain
     # domain = 'Flight'
+    domain = 'ASTMatcher'
     # domain = 'TextEditing'
-    domain = 'Matplotlib'
-    firstTime = True
+
     # set NL query
     # text = 'Insert colon after 1st word'
     while True:
-        print("\nPlease input an English sentence in the "+domain+" domain.")
-        if (domain=='TextEditing'):
-            print("  (Example: Insert a colon after the 1st word in every sentence.)")
-        text = input("  Input (q to quit): ")
+        text = input("Input an English sentence in the "+domain+" domain: ")
         if (text=='q'):
             break
-        if (firstTime):
-            print("Starting HISyn. (First time may take a minute.) Please wait...")
-            firstTime = False
         run_HISyn(domain, text)
     print("Thanks for using HISyn! Goodbye.")
