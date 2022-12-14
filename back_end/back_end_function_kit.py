@@ -10,12 +10,11 @@ import copy
 ############### funcitons for Semantic mapping ######################
 
 # check if a word is part of common knowledge, if yes, mapping with API input
-def ner_mapping_checking(gg, token, ner_mapping_dict):
-    log.test('checking common knowledge: ', token.word, token.ner)
-    print(ner_mapping_dict)
+def common_knowledge_checking(gg, token, common_knowledge_tags):
+    log.test('checking common knowledge: ', token.word)
     target = token
-    if target.ner in ner_mapping_dict:
-        api = mapping_input(gg, target.ner, ner_mapping_dict)
+    if target.ner in common_knowledge_tags:
+        api = mapping_input(gg, target.ner, common_knowledge_tags)
         target.mapping = list(api)
         # print(api)
         for i in range(len(api)):
@@ -28,12 +27,12 @@ def ner_mapping_checking(gg, token, ner_mapping_dict):
 
 
 # mapping the input type with the name entity to map the API that take common knowledge as input
-def mapping_input(gg, input_type, ner_mapping_dict):
+def mapping_input(gg, input_type, common_knowledge_tags):
     log.test('mapping input: ',  input_type)
     result = []
     for k in gg.api_dict.keys():
-        log.test(ner_mapping_dict[input_type], gg.api_dict[k].input)
-        if ner_mapping_dict[input_type] == gg.api_dict[k].input:
+        log.test(common_knowledge_tags[input_type], gg.api_dict[k].input)
+        if common_knowledge_tags[input_type] == gg.api_dict[k].input:
             result.append(k)
     return result
 
@@ -59,7 +58,9 @@ def mapping_word_in_description(gg, token):
         name = k
         desc = gg.api_dict[k].description.lower().replace(',',' ').replace('.', ' ').split(' ')
 #         if (token.word.lower() in desc or token.word.lower() in name or token.lemma in name or token.lemma in desc):
-#         print(token.word, desc, token.word.lower() in desc or token.lemma in desc)
+        # print("ALERT--------------------------------")
+        # print(token.word.lower())
+        print(token.word, desc, token.word.lower() in desc or token.lemma in desc)
         if token.word.lower() in desc or token.lemma in desc:
             result.append(k)
     log.test(result)
@@ -67,11 +68,11 @@ def mapping_word_in_description(gg, token):
 
 
 # mapping common knowledge inside sentence
-def ner_mapping_mapping(gg, nlp):
+def common_knowledge_mapping(gg, nlp, common_knowledge_tags):
     log.log('checking common knowledge')
     for d in nlp.dependency:
-        ner_mapping_checking(gg, nlp.token[d.source], nlp.ner_mapping_dict)
-        ner_mapping_checking(gg, nlp.token[d.target], nlp.ner_mapping_dict)
+        common_knowledge_checking(gg, nlp.token[d.source], common_knowledge_tags)
+        common_knowledge_checking(gg, nlp.token[d.target], common_knowledge_tags)
     log.log('common knowledge replace finished')
 
 
@@ -371,10 +372,10 @@ def add_root_node(nlp, dependent_dict, no_gov_source_dict, empty_mapping_source_
 
 # BFS from one API of target to all APIs of source
 def single_start_BFS(startAPI, endAPISet, gg, path_limit = None, single_api_combine = True):
-    log.log('singel start BFS...', startAPI, endAPISet, path_limit)
-    # log.log("Start API: ", startAPI)
-    # log.log("endAPIset: ", endAPISet)
-    # log.log('path_limit: ', path_limit)
+    log.log('singel start BFS...')
+    log.log("Start API: ", startAPI)
+    log.log("endAPIset: ", endAPISet)
+    log.log('path_limit: ', path_limit)
 
     if startAPI in endAPISet and single_api_combine:
         return [[startAPI]]
@@ -678,7 +679,7 @@ def set_all_api_path(nlp, gg):
 
 
 # replace common knowledge API with API(ck_arguments)
-def replace_ner_mapping_API(nlp):
+def replace_common_knowledge_API(nlp):
     log.log('replace common knowledge api...')
     for d in nlp.dependency:
         if nlp.token[d.target].ner == 'translated':
@@ -1268,20 +1269,17 @@ def combine_cgt(root_cgt_group, gg):
 
         import time
         start_time = time.time()
-        is_gram_correct = False
-        cgt1 = []
-        if tree_set:
-            cgt1 = copy.deepcopy(tree_set[0])
-            for i in range(1, len(tree_set)):
-                # log.test('combine start ...')
-                cgt2 = copy.deepcopy(tree_set[i])
-                # cgt1.display()
-                # cgt2.display()
-                combine_trees(cgt1.root, cgt2)
-            # log.test('combine_cgt_time: ', time.time() - start_time)
+        cgt1 = copy.deepcopy(tree_set[0])
+        for i in range(1, len(tree_set)):
+            # log.test('combine start ...')
+            cgt2 = copy.deepcopy(tree_set[i])
+            # cgt1.display()
+            # cgt2.display()
+            combine_trees(cgt1.root, cgt2)
+        # log.test('combine_cgt_time: ', time.time() - start_time)
 
-            exe_count += 1
-            is_gram_correct = cgt1.check_cgt_grammar(gg)
+        exe_count += 1
+        is_gram_correct = cgt1.check_cgt_grammar(gg)
         if not is_gram_correct:
             continue
         # else:
@@ -1289,23 +1287,22 @@ def combine_cgt(root_cgt_group, gg):
         #     cgt1.display()
         #     log.lprint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
 
-        if cgt1:
         # count api in tree_set[0]
-            cgt1.set_api_list(cgt1.root, gg)
+        cgt1.set_api_list(cgt1.root, gg)
 
-            if cgt1.api_count < min_api_count:
-                min_api_count = cgt1.api_count
-                min_tree.clear()
-                min_tree.append(cgt1)
-                min_index = root_cgt_group.index(tree_set)
+        if cgt1.api_count < min_api_count:
+            min_api_count = cgt1.api_count
+            min_tree.clear()
+            min_tree.append(cgt1)
+            min_index = root_cgt_group.index(tree_set)
 
-            elif cgt1.api_count == min_api_count:
-                min_tree.append(cgt1)
-                min_index = root_cgt_group.index(tree_set)
+        elif cgt1.api_count == min_api_count:
+            min_tree.append(cgt1)
+            min_index = root_cgt_group.index(tree_set)
 
-            if cgt1.api_count == 0:
-                log.test(cgt1)
-                break
+        if cgt1.api_count == 0:
+            log.test(cgt1)
+            break
 
     # display_min_tree(min_tree, min_index, exe_count)
     return min_tree
@@ -1570,8 +1567,8 @@ def convert_to_expression(final_CG_tree_list, gg):
 
 
 # Overall semantic mapping function
-def semantic_mapping(domain, gg, nlp):
-    ner_mapping_mapping(gg, nlp)
+def semantic_mapping(domain, gg, nlp, common_knowledge_tags):
+    common_knowledge_mapping(gg, nlp, common_knowledge_tags)
     mapping_keywords(gg, nlp)
     domain_specific_mapping_rules(domain, nlp)
     remove_empty_edge(nlp)
@@ -1625,7 +1622,7 @@ def reversed_all_path_searching(domain, nlp, gg, dependent_dict):
     # replace common knowledge API with API(ck_argument)
     # Purpose: these APIs become distinguished to each other and
     #  won't be combined in later steps
-    replace_ner_mapping_API(nlp)
+    replace_common_knowledge_API(nlp)
     # nlp.displayByEdge()
 
 
