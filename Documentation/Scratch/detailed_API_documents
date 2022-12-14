@@ -1,0 +1,84 @@
+Move
+input: _sprite,_steps
+return:
+description: Moves player for x amount of steps
+
+sprite
+input: ck_character
+return:
+description: character
+
+steps
+input: ck_integer
+return:
+description: number of steps
+
+degrees
+input: ck_integer
+return:
+description: number of degrees
+
+Rotate
+input: _sprite, _degrees
+return:
+description: Moves player for x amount of steps
+
+RotateTime
+input: _sprite, _degrees, _time
+return:
+description: Moves player for x amount of steps
+
+MoveTime
+input: _sprite, _steps, _time
+return:
+description: Moves player for x amount of steps
+
+time
+input: ck_integer
+return:
+description: time taken
+
+if
+input: _statement
+return:
+description: returns statement based on if/then statement
+
+statement
+input: ck_string
+return:
+description: boolean statement
+
+location
+input: _sprite
+return:
+description: location coordinates of sprite
+
+while
+input: _boolean, statement
+return:
+description: returns statement if boolean is true
+
+Glide
+input: _sprite, _time, _x, _y
+return:
+description: glides sprite for x amount of time
+
+x
+input: ck_integer
+return:
+description: integer for x coordinate
+
+y
+input: ck_integer
+return:
+description: integer for y coordinate
+
+Noise
+input: _sprite
+return:
+description: returns noise of sprite
+
+Broadcast
+input: statement
+return:
+description: broadcasts statement given
