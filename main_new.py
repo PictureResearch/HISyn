@@ -54,32 +54,9 @@ if __name__ == '__main__':
     # domain = 'Flight'
     # domain = 'ASTMatcher'
     # domain = 'TextEditing'
-    # domain = 'Roblox'
-    domain = 'Scratch'
+    domain = 'Roblox'
 
-    text = 'Cat moves 7 steps'
-    # text = 'Cat rotates 4 degrees and moves 6 steps'
-    # text = 'player dies'
-    # text = 'I want to spawn 10 enemies'
-       #^ when Will used my machine
-    # text = 'cat glides 10 seconds to 5 5'
-    # text = 'rotate 15 degrees and then move 15 steps.'
-    # text = 'I want the Cat to rotate 10 degrees'
-    # text = 'Cat rotates 10 degrees'
-    # text = 'I want the cat to move 20 steps to the right and when the space key is pressed teleport to a random location.'
-    # text = 'When Start is clicked, forever spin 15 degrees to the right'
-    # text = 'If cat is touching mouse pointer then move 15 steps'
-    # text = 'Repeatedly Move the cat 15 steps, then rotate 20 degrees until the cat is touching the edge then teleport to a random location.'
-    # ^good example :)
-    # text = 'If the Dog is touching the edge, then the cat moves 10 steps'
-    # text = 'The cat glides for 3 seconds to X: 10, Y: 10. Once the Cat is done gliding, the dog will spin 15 degrees. '
-    # ^glide isnt working
-    # text = 'The Dog moves 15 steps and then the cat will teleport to a random location.'
-    #text = 'The Cat meows if the volume of the meow is greater than 5 decibels then the Dog barks'
-    #^doesn't work
-    # text = 'the cat talks'
-    # text = 'If the sprite is touching the color red, then wait .5 seconds then broadcast death.'
-    # text = 'if sprite is red then move 5 steps'
-    # text = 'broadcast hello'
+    text = "Player dies after touching block"
+
 
     run_HISyn(domain, text=text, index=1)
