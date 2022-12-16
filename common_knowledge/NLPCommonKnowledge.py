@@ -69,6 +69,4 @@ common_knowledge_tags = {
     'ORDINAL': 'ck_integer',
     'NUMBER': 'doubleValue',
     'CHARACTER': 'ck_character',
-    'DEGREE': 'ck_integer',
-    'TIME': 'ck_integer'
 }
