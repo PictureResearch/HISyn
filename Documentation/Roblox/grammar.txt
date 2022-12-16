@@ -1,0 +1,62 @@
+_root   := _Dies
+	|  _Teleport
+	|  _SetOnFire
+	|  _MoveBackAndForth
+	|  _Explode
+	|  _SprintWith
+	|  _DoubleJump
+	|  _ButtonTeleport
+	|  _Coin
+	|  _Victory
+	|  _Light
+	|  _Spin
+	|  _JumpBoost
+	|  _SpeedBoost
+	|  _Spawn
+	|  _Dissappear
+	|  _MoveUp
+	|  _CreateWeapon
+	|  _CreateLaserGun
+	|  _CreateEnemies
+
+_Dies := Dies(ck_character)
+
+_Teleport := Teleport(ck_character)
+
+_SetOnFire := SetOnFire(ck_character)
+
+_MoveBackAndForth := MoveBackAndForth(ck_character)
+
+_Explode := Explode(ck_character)
+
+_SprintWith := SprintWith(ck_character)
+
+_DoubleJump := DoubleJump(ck_character)
+
+_ButtonTeleport := ButtonTeleport(ck_character)
+
+_Coin := Coin()
+
+_Victory := Victory(ck_character)
+
+_Light := Light(ck_character)
+
+_Spin := Spin(_Dies)
+
+_JumpBoost := JumpBoost(ck_character)
+
+_SpeedBoost := SpeedBoost(ck_character)
+
+_Spawn := Spawn(ck_character)
+
+_Dissappear := Dissappear(ck_character)
+
+_MoveUp := MoveUp(ck_integer)
+
+_CreateWeapon := CreateWeapon(ck_integer)
+
+_CreateLaserGun := CreateLaserGun(ck_integer)
+
+_CreateEnemies := CreateEnemies(ck_integer)
+
+
