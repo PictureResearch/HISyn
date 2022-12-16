@@ -73,10 +73,10 @@ input: ck_character
 return:
 description: Creates other parts when touched
 
-Dissappear
+Disappear
 input: ck_character
 return:
-description: The part dissappears when touched
+description: The part disappears when touched
 
 MoveUp
 input: ck_integer

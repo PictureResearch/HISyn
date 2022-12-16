@@ -49,7 +49,7 @@ _SpeedBoost := SpeedBoost(ck_character)
 
 _Spawn := Spawn(ck_character)
 
-_Dissappear := Dissappear(ck_character)
+_Disappear := Disappear(ck_character)
 
 _MoveUp := MoveUp(ck_integer)
 
